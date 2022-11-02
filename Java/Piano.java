@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.sound.midi.*;
 
-public class Piano implements ChangeListener, KeyListener{
+public class Piano implements ChangeListener, KeyListener {
 
     Synthesizer synth;
     MidiChannel[] mChannels;
@@ -71,70 +71,86 @@ public class Piano implements ChangeListener, KeyListener{
                     keypress = 60;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "b0":
                     keypress = 61;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "w1":
                     keypress = 62;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "b1":
                     keypress = 63;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "w2":
                     keypress = 64;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "w3":
                     keypress = 65;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "b2":
                     keypress = 66;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "w4":
                     keypress = 67;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "b3":
                     keypress = 68;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "w5":
                     keypress = 69;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "b5":
                     keypress = 70;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
-                break;
+                    break;
 
                 case "w6":
                     keypress = 71;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                    break;
+            }
+        }
+    }
+    
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+        JButton temp = (JButton) e.getSource();
+        // String btnName = temp.getName();
+        if (temp.getModel().isPressed()) {
+            switch (e.getKeyChar()) {
+                case 'w':
+                    keypress = 60;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
@@ -142,16 +158,14 @@ public class Piano implements ChangeListener, KeyListener{
         }
     }
 
-    public void keyPressed(KeyEvent e){
-            
-    }
+    @Override
+    public void keyReleased(KeyEvent e) {
 
-    public void keyReleased(KeyEvent e){
-            
     }
+    
+    @Override
+    public void keyTyped(KeyEvent e) {
 
-    public void keyTyped(KeyEvent e){
-            
     }
 
     public static void main(String[] args) {
