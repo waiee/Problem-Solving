@@ -71,13 +71,13 @@ public class Piano extends Frame implements ChangeListener {
                 break;
 
                 case "b0":
-                    keypress = 60;
+                    keypress = 61;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "w1":
-                    keypress = 60;
+                    keypress = 62;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
@@ -112,7 +112,25 @@ public class Piano extends Frame implements ChangeListener {
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
-                case "b1":
+                case "b3":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "w5":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "b4":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "w6":
                     keypress = 60;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
