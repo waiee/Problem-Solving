@@ -3,7 +3,7 @@ import javax.swing.event.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Piano {
+public class Piano extends Frame implements ChangeListener {
     Piano() {
         JFrame frame = new JFrame("Pea-Air-Know");
         JButton[] w = new JButton[7];
@@ -18,7 +18,7 @@ public class Piano {
             w[i].setSize(70, 300);
             panel.add(w[i], 0, -1);
         }
-        
+
         for (int i = 0; i < 6; i++) {
             if (i == 2)
                 continue;
@@ -28,6 +28,10 @@ public class Piano {
             b[i].setSize(70, 150);
             panel.add(b[i], 1, -1);
         }
+        public void stateChanged(ChangeEvent e){
+            
+        }
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 320);
         frame.setResizable(false);
