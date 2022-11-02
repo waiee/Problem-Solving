@@ -10,6 +10,7 @@ public class Piano {
         JButton[] b = new JButton[6];
         JLayeredPane panel = new JLayeredPane();
         frame.add(panel);
+
         for (int i = 0; i < 7; i++) {
             w[i] = new JButton();
             w[i].setBackground(Color.WHITE);
@@ -17,6 +18,7 @@ public class Piano {
             w[i].setSize(70, 300);
             panel.add(w[i], 0, -1);
         }
+        
         for (int i = 0; i < 6; i++) {
             if (i == 2)
                 continue;
