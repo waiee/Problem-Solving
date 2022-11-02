@@ -83,55 +83,55 @@ public class Piano extends Frame implements ChangeListener {
                 break;
 
                 case "b1":
-                    keypress = 60;
+                    keypress = 63;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "w2":
-                    keypress = 60;
+                    keypress = 64;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "w3":
-                    keypress = 60;
+                    keypress = 65;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "b2":
-                    keypress = 60;
+                    keypress = 66;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "w4":
-                    keypress = 60;
+                    keypress = 67;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "b3":
-                    keypress = 60;
+                    keypress = 68;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "w5":
-                    keypress = 60;
+                    keypress = 69;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
-                case "b4":
-                    keypress = 60;
+                case "b5":
+                    keypress = 70;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
 
                 case "w6":
-                    keypress = 60;
+                    keypress = 71;
                     loudn = 120;
                     mChannels[0].noteOn(keypress, loudn);
                 break;
