@@ -145,16 +145,66 @@ public class Piano implements ChangeListener, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
 
-        JButton temp = (JButton) e.getSource();
-        String btnName = temp.getName();
-        if (temp.getModel().isPressed()) {
-            switch (e.getKeyChar()) {
-                case 'w':
-                    keypress = 60;
-                    loudn = 120;
-                    mChannels[0].noteOn(keypress, loudn);
-                break;
-            }
+        switch (e.getKeyChar()) {
+            case 'q':
+                keypress = 60;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'w':
+                keypress = 61;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'e':
+                keypress = 62;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'r':
+                keypress = 63;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 't':
+                keypress = 64;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'y':
+                keypress = 65;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'u':
+                keypress = 66;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'i':
+                keypress = 67;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'o':
+                keypress = 68;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
+
+            case 'p':
+                keypress = 69;
+                loudn = 120;
+                mChannels[0].noteOn(keypress, loudn);
+            break;
         }
     }
 
