@@ -146,7 +146,7 @@ public class Piano implements ChangeListener, KeyListener {
     public void keyPressed(KeyEvent e) {
 
         JButton temp = (JButton) e.getSource();
-        // String btnName = temp.getName();
+        String btnName = temp.getName();
         if (temp.getModel().isPressed()) {
             switch (e.getKeyChar()) {
                 case 'w':
@@ -162,7 +162,7 @@ public class Piano implements ChangeListener, KeyListener {
     public void keyReleased(KeyEvent e) {
 
     }
-    
+
     @Override
     public void keyTyped(KeyEvent e) {
 
