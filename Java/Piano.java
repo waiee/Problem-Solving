@@ -1,10 +1,11 @@
 import javax.swing.*;
+import javax.swing.JComboBox.KeySelectionManager;
 import javax.swing.event.*;
 import java.awt.event.*;
 import java.awt.*;
 import javax.sound.midi.*;
 
-public class Piano extends Frame implements ChangeListener {
+public class Piano implements ChangeListener, KeyListener{
 
     Synthesizer synth;
     MidiChannel[] mChannels;
@@ -35,6 +36,7 @@ public class Piano extends Frame implements ChangeListener {
 
             w[i].addChangeListener(this);
             w[i].setName("w" + Integer.toString(i));
+            w[i].addKeyListener(this);
             panel.add(w[i], 0, -1);
         }
 
@@ -48,6 +50,7 @@ public class Piano extends Frame implements ChangeListener {
 
             b[i].addChangeListener(this);
             b[i].setName("b" + Integer.toString(i));
+            b[i].addKeyListener(this);
             panel.add(b[i], 1, -1);
         }
 
@@ -137,6 +140,18 @@ public class Piano extends Frame implements ChangeListener {
                 break;
             }
         }
+    }
+
+    public void keyPressed(KeyEvent e){
+            
+    }
+
+    public void keyReleased(KeyEvent e){
+            
+    }
+
+    public void keyTyped(KeyEvent e){
+            
     }
 
     public static void main(String[] args) {
