@@ -45,6 +45,7 @@ public class Piano extends Frame implements ChangeListener {
 
     Synthesizer synth;
     MidiChannel[] mChannels;
+    
     try
     {
         synth = MidiSystem.getSynthesizer();
