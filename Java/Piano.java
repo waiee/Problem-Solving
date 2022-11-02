@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.event.*;
 import java.awt.*;
+import javax.sound.midi.*;
 
 public class Piano extends Frame implements ChangeListener {
     
@@ -17,7 +18,7 @@ public class Piano extends Frame implements ChangeListener {
             w[i].setBackground(Color.WHITE);
             w[i].setLocation(i * 70, 0);
             w[i].setSize(70, 300);
-            
+
             w[i].addChangeListener(this);
             w[i].setName("W"+ Integer.toString(i));
             panel.add(w[i], 0, -1);
