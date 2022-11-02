@@ -6,7 +6,21 @@ import javax.sound.midi.*;
 
 public class Piano extends Frame implements ChangeListener {
 
+    Synthesizer synth;
+    MidiChannel[] mChannels;
+    int keypress = 0;
+    int loudn = 0;
+
     Piano() {
+
+        try {
+            synth = MidiSystem.getSynthesizer();
+            synth.open();
+            mChannels = synth.getChannels();
+        } catch (MidiUnavailableException e) {
+            JOptionPane.showMessageDialog(null, "Unable to open MIDI.");
+        }
+
         JFrame frame = new JFrame("Pea-Air-Know");
         JButton[] w = new JButton[7];
         JButton[] b = new JButton[6];
@@ -20,7 +34,7 @@ public class Piano extends Frame implements ChangeListener {
             w[i].setSize(70, 300);
 
             w[i].addChangeListener(this);
-            w[i].setName("W" + Integer.toString(i));
+            w[i].setName("w" + Integer.toString(i));
             panel.add(w[i], 0, -1);
         }
 
@@ -43,28 +57,67 @@ public class Piano extends Frame implements ChangeListener {
         frame.setVisible(true);
     }
 
-    Synthesizer synth;
-    MidiChannel[] mChannels;
-    
-    try
-    {
-        synth = MidiSystem.getSynthesizer();
-        synth.open();
-        mChannels = synth.getChannels();
-    }
-    
-    catch(
-    MidiUnavailableException e)
-    {
-        JOptionPane.showMessageDialog(null, "Unable to open MIDI.");
-    }
-
     @Override
     public void stateChanged(ChangeEvent e) {
         JButton temp = (JButton) e.getSource();
         String btnName = temp.getName();
         if (temp.getModel().isPressed()) {
             System.out.println(btnName + " pressed.");
+            switch (btnName) {
+                case "w0":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "b0":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "w1":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "b1":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "w2":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "w3":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "b2":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "w4":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+
+                case "b1":
+                    keypress = 60;
+                    loudn = 120;
+                    mChannels[0].noteOn(keypress, loudn);
+                break;
+            }
         }
     }
 
