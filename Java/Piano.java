@@ -16,6 +16,7 @@ public class Piano extends Frame implements ChangeListener {
             w[i].setBackground(Color.WHITE);
             w[i].setLocation(i * 70, 0);
             w[i].setSize(70, 300);
+            w[i].addChangeListener(this);
             panel.add(w[i], 0, -1);
         }
 
@@ -26,16 +27,23 @@ public class Piano extends Frame implements ChangeListener {
             b[i].setBackground(Color.BLACK);
             b[i].setLocation(35 + i * 70, 0);
             b[i].setSize(70, 150);
+            b[i].addChangeListener(this);
             panel.add(b[i], 1, -1);
-        }
-        public void stateChanged(ChangeEvent e){
-            
         }
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 320);
         frame.setResizable(false);
         frame.setVisible(true);
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e){
+        Jbutton temp = (JButton)e.getSource();
+        String btnName = temp.getName();
+        if(temp.getModel().isPressed){
+            System.out.println(btnName+ " presssed.")
+        }
     }
 
     public static void main(String[] args) {
