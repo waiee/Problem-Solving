@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.sound.midi.*;
 
 public class Piano extends Frame implements ChangeListener {
-    
+
     Piano() {
         JFrame frame = new JFrame("Pea-Air-Know");
         JButton[] w = new JButton[7];
@@ -20,7 +20,7 @@ public class Piano extends Frame implements ChangeListener {
             w[i].setSize(70, 300);
 
             w[i].addChangeListener(this);
-            w[i].setName("W"+ Integer.toString(i));
+            w[i].setName("W" + Integer.toString(i));
             panel.add(w[i], 0, -1);
         }
 
@@ -33,7 +33,7 @@ public class Piano extends Frame implements ChangeListener {
             b[i].setSize(70, 150);
 
             b[i].addChangeListener(this);
-            b[i].setName("b"+ Integer.toString(i));
+            b[i].setName("b" + Integer.toString(i));
             panel.add(b[i], 1, -1);
         }
 
@@ -43,12 +43,27 @@ public class Piano extends Frame implements ChangeListener {
         frame.setVisible(true);
     }
 
+    Synthesizer synth;
+    MidiChannel[] mChannels;
+    try
+    {
+        synth = MidiSystem.getSynthesizer();
+        synth.open();
+        mChannels = synth.getChannels();
+    }
+    
+    catch(
+    MidiUnavailableException e)
+    {
+        JOptionPane.showMessageDialog(null, "Unable to open MIDI.");
+    }
+
     @Override
-    public void stateChanged(ChangeEvent e){
-        JButton temp = (JButton)e.getSource();
+    public void stateChanged(ChangeEvent e) {
+        JButton temp = (JButton) e.getSource();
         String btnName = temp.getName();
-        if(temp.getModel().isPressed()){
-            System.out.println(btnName+ " pressed.");
+        if (temp.getModel().isPressed()) {
+            System.out.println(btnName + " pressed.");
         }
     }
 
