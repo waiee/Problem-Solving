@@ -1,4 +1,4 @@
-
+import numpy as np
 
 #Enter number or processes
 np = int(input("Enter number of processes: "))
