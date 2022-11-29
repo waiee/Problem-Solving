@@ -27,6 +27,10 @@
 #     print("P" + str(position[i]) + "        " + str(arrival_time[i]) +
 #      "\t\t " + str(burst_time[i]))
 
+import numpy as np
+
+info = []
+
 
 
 
