@@ -5,7 +5,7 @@ np = int(input("Enter number of processes: "))
 
 #loop for arrival time, burst time
 position = []
-arrival_time = []
+arrival_time = []  
 burst_time = []
 sorted_arr = []
 
