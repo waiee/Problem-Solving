@@ -10,12 +10,12 @@ total_ta = 0
 
 for i in range(n):
     process_info = {}
-    print("[P" + str(i+1) + "]")
-    process_info['id'] = str(i+1)
-    process_info['arrival_time'] = int(
-        input("Enter Arrival Time: "))
+    print("[P" + str(i) + "]")
+    process_info['id'] = str(i)
     process_info['burst_time'] = int(
         input("Enter Burst Time: "))
+    process_info['arrival_time'] = int(
+        input("Enter Arrival Time: "))
 
     info.append(process_info)
     print("")
