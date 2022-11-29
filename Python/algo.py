@@ -7,6 +7,11 @@ np = int(input("Enter number of processes: "))
 position = []
 arrival_time = []
 burst_time = []
+sorted_arr = []
+
+def sorted(arr):
+    arrival_time.sort()
+    return arr
 
 for i in range(np):
     position.append(i+1)
@@ -19,6 +24,9 @@ print("Process   Arrival Time   Burst Time")
 for i in range(len(position)):
     print("P" + str(position[i]) + "        " + str(arrival_time[i]) +
      "\t\t " + str(burst_time[i]))
+
+# sorted(arrival_time)
+# print(arrival_time)
 
 
 
