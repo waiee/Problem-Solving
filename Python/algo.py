@@ -26,12 +26,12 @@ def sort_param(e):
 info.sort(key=sort_param)
 
 # Menu
-print("{:<15} {:<15} {:<15}".format('Process', 'Arrival Time', 'Burst Time'))
+print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
 
 for i in range(n):
     p = info[i]
     print("{:<15} {:<15} {:<15}".format(
-        p['id'], p['arrival_time'], p['burst_time']))
+        p['id'], p['burst_time'], p['arrival_time']))
 
 # Algorithm
 # time = 0
