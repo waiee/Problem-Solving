@@ -3,7 +3,6 @@ import numpy as np
 np = int(input("Enter number of processes: "))
 
 info = []
-
 total_wt = 0
 total_ta = 0
 
