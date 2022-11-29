@@ -23,7 +23,6 @@ for i in range(np):
 # Sort by arrival time
 def sort_param(e):
     return e['arrival_time']
-    
 info.sort(key=sort_param)
 
 # Menu
