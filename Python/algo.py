@@ -13,7 +13,7 @@ for i in range(np):
     arrival_time.append(int(input("Enter arrival time for P" + str(i+1) + ": ")))
 
 print("---------------------------------")
-print("Process   Arrival time")
+print("Process   Arrival Time   Burst Time")
 print("P" + str(position[0]) + "        " + str(arrival_time[0]))
 
 
