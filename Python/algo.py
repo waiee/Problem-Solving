@@ -7,7 +7,6 @@ np = int(input("Enter number of processes: "))
 position = []
 arrival_time = []  
 burst_time = []
-sorted_arr = []
 
 def sorted(arr):
     arrival_time.sort()
