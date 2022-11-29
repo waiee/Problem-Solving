@@ -11,10 +11,11 @@ burst_time = []
 for i in range(np):
     position.append(i+1)
     arrival_time.append(int(input("Enter arrival time for P" + str(i+1) + ": ")))
+    burst_time.append(int(input("Enter burst time for P" + str(i+1) + ": ")))
 
 print("---------------------------------")
 print("Process   Arrival Time   Burst Time")
-print("P" + str(position[0]) + "        " + str(arrival_time[0]))
+print("P" + str(position[0]) + "        " + str(arrival_time[0]) + "        " + str(burst_time[0]))
 
 
 
