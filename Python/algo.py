@@ -15,6 +15,7 @@ for i in range(np):
         input("Enter burst time for P" + str(i+1) + ": "))
 
     info.append(process_info)
+    print("----------------------------")
 
 def sort_param(e):
 
