@@ -1,5 +1,6 @@
 import numpy as np
 
+# User insert number of process
 np = int(input("Enter number of processes: "))
 print("")
 
@@ -19,12 +20,11 @@ for i in range(np):
     info.append(process_info)
     print("")
 
-#sort by arrival time
+# Sort by arrival time
 def sort_param(e):
     return e['arrival_time']
+    
 info.sort(key=sort_param)
-
-
 
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Arrival Time', 'Burst Time'))
@@ -33,3 +33,5 @@ for i in range(np):
     p = info[i]
     print("{:<15} {:<15} {:<15}".format(
         p['id'], p['arrival_time'], p['burst_time']))
+
+# Algorithm
