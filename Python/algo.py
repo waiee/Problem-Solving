@@ -34,16 +34,16 @@ for i in range(np):
         p['id'], p['arrival_time'], p['burst_time']))
 
 # Algorithm
-time = 0
-total_time = 0
+# time = 0
+# total_time = 0
 
-for i in range(np):
-    time+=1
-    process_info = info[i]
+# for i in range(np):
+#     time+=1
+#     process_info = info[i]
 
-    if i==0:
-        process_info['wait_time'] = 0
-    else: 
-        
+#     if i==0:
+#         process_info['wait_time'] = 0
+#     else: 
+
 
 
