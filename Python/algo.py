@@ -16,6 +16,12 @@ for i in range(np):
 
     info.append(process_info)
 
+def sort_param(e):
+
+    return e['arrival_time']
+
+info.sort(key=sort_param)
+
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Arrival Time', 'Burst Time'))
 
