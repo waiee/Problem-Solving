@@ -72,7 +72,7 @@ for i in range(n):
        print("Total Time Executed: " + str(time))
     
     else: 
-        process_info['waiting_time'] = 0
+        process_info['waiting_time'] = time-process_info['arrival_time']
         wt = process_info['waiting_time']
         time += bt
 
