@@ -62,5 +62,9 @@ for i in range(n):
     #         else:
     #             print("this is 1 second afterward")
     if i == 0:
+       process_info['waiting_time'] = 0
+       wt = process_info['waiting_time']
+       time += bt 
+        
 
 
