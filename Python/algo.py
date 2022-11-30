@@ -7,6 +7,7 @@ print("")
 info = []
 total_wt = 0
 total_ta = 0
+bt = 0
 
 for i in range(n):
     process_info = {}
@@ -33,16 +34,21 @@ for i in range(n):
     print("{:<15} {:<15} {:<15}".format(
         p['id'], p['burst_time'], p['arrival_time']))
 
+
+
 # Algorithm
 # time = 0
 # total_time = 0
+# bt = 0
 
 # for i in range(np):
-#     time+=1
 #     process_info = info[i]
 
 #     if i==0:
-#         process_info['wait_time'] = 0
+#         # process_info['wait_time'] = 0
+#         bt = process_info['burst_time']
+#         time+= bt
+
 #     else: 
 
 
