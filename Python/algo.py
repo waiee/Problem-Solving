@@ -41,7 +41,6 @@ for i in range(n):
 
 # Algorithm
 time = 0
-total_time = 0
 bt = 0
 wt = 0
 
@@ -51,7 +50,7 @@ for i in range(n):
 
     print("") 
     print("[P" + str(i) + "]") 
-    
+
     if i == 0:
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
