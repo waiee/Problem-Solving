@@ -51,18 +51,7 @@ for i in range(n):
 
     print("") 
     print("[P" + str(i) + "]") 
-
-    # if i == 0:
-    #     for i in range(bt+1):
-    #         if i == 0:
-    #             process_info['wait_time'] = 0
-    #             wt = process_info['wait_time']
-    #             time += bt
-    #             print("Waiting Time: " + str(wt))
-    #             print(str(time) + " second executed.")
-
-    #         else:
-    #             print("this is 1 second afterward")
+    
     if i == 0:
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
