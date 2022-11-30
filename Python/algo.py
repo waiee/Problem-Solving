@@ -44,7 +44,6 @@ for i in range(size):
 
 # Algorithm
 time = 0
-bt = 0
 wt = 0
 check_Arr = 0
 
