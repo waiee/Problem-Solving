@@ -5,22 +5,24 @@ def checkArr(arrival):
     for i in range(size):
         process_info = info[i]
         if process_info['arrival_time'] <= time:
-            if em_arr != sec_arr:
-                em_arr.append(i)
-                print("P" + str(em_arr[i]) + " has arrived.")
+            fill_arr(em_arr)
+            print("P" + str(em_arr(i)) + " has arrived.")
     print(em_arr)
     return arrival
 
-# def fill_arr(array):
-#     for i in range(size):
-#         sec_arr.append(i)
-#     return array
-
-def com_arr(array):
+def fill_arr(array):
     for i in range(size):
-       
+        sec_arr.append(i)
 
-
+    for i in range(size):
+        em = em_arr[i]
+        for j in range(size):
+            sec = sec_arr[j]
+            if em == sec:
+                break
+            else:
+                em_arr.append(i)
+    return array       
 
 # User insert number of process
 n = int(input("Enter number of processes: "))
@@ -45,9 +47,9 @@ for i in range(size):
     print("")
 
 # Sort by arrival time
-def sort_param(e):
-    return e['arrival_time']
-info.sort(key=sort_param)
+# def sort_param(e):
+#     return e['arrival_time']
+# info.sort(key=sort_param)
 
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
@@ -81,6 +83,7 @@ for i in range(size):
 
        #check whether a process arrived
        print("")
+       fill_arr(em_arr)
        checkArr(check_Arr)
 
     
@@ -94,5 +97,5 @@ for i in range(size):
 
         #check whether a process arrived
         print("")
+        fill_arr(em_arr)
         checkArr(check_Arr)
-        fill_arr(sec_arr)
