@@ -12,9 +12,6 @@ def checkArr(arrival):
 
 def fill_arr(array):
     for i in range(size):
-        sec_arr.append(i)
-
-    for i in range(size):
         em = em_arr[i]
         for j in range(size):
             sec = sec_arr[j]
@@ -33,8 +30,13 @@ total_wt = 0
 total_ta = 0
 bt = 0
 size = n+1
+
+#fill array for checking
 em_arr = []*size
 sec_arr = []*size
+for i in range(size):
+    sec_arr.append(i)
+
 
 for i in range(size):
     process_info = {}
