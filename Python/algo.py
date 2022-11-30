@@ -6,18 +6,22 @@ def checkArr(arrival):
         process_info = info[i]
         if process_info['arrival_time'] <= time:
             print("P" + str(i) + " has arrived.")
+            if em_arr != size:
+                em_arr.append(i)
+    print(em_arr)
     return arrival
+
 
 # User insert number of process
 n = int(input("Enter number of processes: "))
 print("")
 
 info = []
-em_arr = []
 total_wt = 0
 total_ta = 0
 bt = 0
 size = n+1
+em_arr = [size]
 
 for i in range(size):
     process_info = {}
