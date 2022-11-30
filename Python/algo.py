@@ -5,15 +5,21 @@ def checkArr(arrival):
     for i in range(size):
         process_info = info[i]
         if process_info['arrival_time'] <= time:
-            print("P" + str(i) + " has arrived.")
-            em_arr.append(i)
+            if em_arr != sec_arr:
+                em_arr.append(i)
+                print("P" + str(em_arr[i]) + " has arrived.")
     print(em_arr)
     return arrival
 
-def fill_arr(array):
+# def fill_arr(array):
+#     for i in range(size):
+#         sec_arr.append(i)
+#     return array
+
+def com_arr(array):
     for i in range(size):
-        sec_arr.append(i)
-    return array
+       
+
 
 
 # User insert number of process
@@ -79,7 +85,6 @@ for i in range(size):
 
     
     else:
-
         process_info['waiting_time'] = time-process_info['arrival_time']
         wt = process_info['waiting_time']
         time += bt
