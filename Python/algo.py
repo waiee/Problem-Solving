@@ -16,8 +16,9 @@ info = []
 total_wt = 0
 total_ta = 0
 bt = 0
+size = n+1
 
-for i in range(n):
+for i in range(size):
     process_info = {}
     print("[P" + str(i) + "]")
     process_info['id'] = str(i)
@@ -41,7 +42,7 @@ info.sort(key=sort_param)
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
 
-for i in range(n):
+for i in range(size):
     p = info[i]
     print("{:<15} {:<15} {:<15}".format(
         p['id'], p['burst_time'], p['arrival_time']))
@@ -53,7 +54,7 @@ bt = 0
 wt = 0
 check_Arr = 0
 
-for i in range(n):
+for i in range(size):
     process_info = info[i]
     bt = process_info['burst_time']
 
