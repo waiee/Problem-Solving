@@ -13,6 +13,7 @@ n = int(input("Enter number of processes: "))
 print("")
 
 info = []
+em_arr = []
 total_wt = 0
 total_ta = 0
 bt = 0
