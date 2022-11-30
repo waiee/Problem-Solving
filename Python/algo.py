@@ -5,11 +5,9 @@ def checkArr(arrival):
     for i in range(size):
         process_info = info[i]
         if process_info['arrival_time'] <= time:
-            for j in range(size):
-                
-                em_arr.append(i)
-                print("P" + str(i) + " has arrived.")
-
+            em_arr.append(i)
+            print("P" + str(i) + " has arrived.")
+    
     print(em_arr)
     print(sec_arr)
     return arrival
