@@ -48,7 +48,9 @@ wt = 0
 for i in range(n):
     process_info = info[i]
     bt = process_info['burst_time']
-    wt = process_info['waiting_time']
+
+    print("") 
+    print("[P" + str(i) + "]") 
 
     # if i == 0:
     #     for i in range(bt+1):
@@ -64,7 +66,19 @@ for i in range(n):
     if i == 0:
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
-       time += bt 
+       time += bt
+
+       print("Waiting Time: " + str(wt))
+       print("Total Time Executed: " + str(time))
+    
+    else: 
+        process_info['waiting_time'] = 0
+        wt = process_info['waiting_time']
+        time += bt
+
+        print("Waiting Time: " + str(wt))
+        print("Total Time Executed: " + str(time))
+        
         
 
 
