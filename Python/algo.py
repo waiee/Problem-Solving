@@ -2,9 +2,9 @@ import numpy as np
 
 #function - check arrival
 def checkArr(arrival):
-    for i in range(n):
+    for i in range(size):
         process_info = info[i]
-        if process_info['arrival_time'] < time:
+        if process_info['arrival_time'] <= time:
             print("P" + str(i) + " has arrived.")
     return arrival
 
@@ -22,21 +22,15 @@ for i in range(size):
     process_info = {}
     print("[P" + str(i) + "]")
     process_info['id'] = str(i)
-    process_info['burst_time'] = int(
-        input("Enter Burst Time: "))
-    process_info['arrival_time'] = int(
-        input("Enter Arrival Time: "))
+    process_info['burst_time'] = int(input("Enter Burst Time: "))
+    process_info['arrival_time'] = int(input("Enter Arrival Time: "))
 
     info.append(process_info)
     print("")
 
 # Sort by arrival time
-
-
 def sort_param(e):
     return e['arrival_time']
-
-
 info.sort(key=sort_param)
 
 # Menu
