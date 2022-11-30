@@ -5,21 +5,22 @@ def checkArr(arrival):
     for i in range(size):
         process_info = info[i]
         if process_info['arrival_time'] <= time:
-            fill_arr(em_arr)
-            print("P" + str(em_arr(i)) + " has arrived.")
+            em_arr.append(i)
+            print("P" + str(i) + " has arrived.")
+
     print(em_arr)
+    print(sec_arr)
     return arrival
 
-def fill_arr(array):
-    for i in range(size):
-        em = em_arr[i]
-        for j in range(size):
-            sec = sec_arr[j]
-            if em == sec:
-                break
-            else:
-                em_arr.append(i)
-    return array       
+# def fill_arr(array):
+#     for i in range(size):
+#         for j in range(size):
+#             sec = sec_arr[j]
+#             if em_arr[i] == sec:
+#                 break
+#             else:
+#                 em_arr.append(i)
+#     return array       
 
 # User insert number of process
 n = int(input("Enter number of processes: "))
@@ -85,7 +86,7 @@ for i in range(size):
 
        #check whether a process arrived
        print("")
-       fill_arr(em_arr)
+    #    fill_arr(em_arr)
        checkArr(check_Arr)
 
     
@@ -99,5 +100,5 @@ for i in range(size):
 
         #check whether a process arrived
         print("")
-        fill_arr(em_arr)
+        # fill_arr(em_arr)
         checkArr(check_Arr)
