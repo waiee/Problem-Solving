@@ -4,9 +4,15 @@ import numpy as np
 def checkArr(arrival):
     for i in range(size):
         process_info = info[i]
-        if process_info['arrival_time'] <= time:
-            em_arr.append(i)
-            print("P" + str(i) + " has arrived.")
+        arrival_info = process_info['arrival_time']
+        if arrival_info <= time:
+            if arrival_info in sec_arr:
+                em_arr.append(arrival_info)
+                sec_arr.pop(arrival_info)
+                print("P" + str(i) + " has arrived.")
+            else:
+                break
+            
     
     print(em_arr)
     print(sec_arr)
@@ -44,13 +50,6 @@ info = []
 bt = 0
 size = n+1
 
-#fill array for checking
-em_arr = []*size
-sec_arr = []*size
-for i in range(size):
-    sec_arr.append(i)
-
-
 for i in range(size):
     process_info = {}
     print("[P" + str(i) + "]")
@@ -74,6 +73,14 @@ for i in range(size):
     print("{:<15} {:<15} {:<15}".format(
         p['id'], p['burst_time'], p['arrival_time']))
 
+####### fill array for checking ######
+em_arr = []*size
+sec_arr = []*size
+
+for i in range(size):
+    process_info = info[i]
+    arrival_info = process_info['arrival_time']
+    sec_arr.append(arrival_info)
 
 # Algorithm
 time = 0
