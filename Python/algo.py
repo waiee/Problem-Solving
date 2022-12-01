@@ -14,6 +14,20 @@ def checkArr(arrival, check):
     # print(check)
     return arrival, check
 
+#function - check arrival
+def compArr(arrival, check):
+    for i in range(size):
+        process_info = info[i]
+        arr_t = process_info['arrival_time']
+        if arr_t <= time:
+            if arr_t in sec_arr:
+                arrival.append(arr_t)
+                check.remove(arr_t)
+                print("P" + str(i) + " has arrived.")
+    # print(arrival)
+    # print(check)ss
+    return arrival, check
+
 # User insert number of process
 n = int(input("Enter number of processes: "))
 print("")
