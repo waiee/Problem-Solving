@@ -35,7 +35,6 @@ for i in range(size):
     process_info['burst_time'] = int(input("Enter Burst Time: "))
     process_info['arrival_time'] = int(input("Enter Arrival Time: "))
     sec_arr.append(process_info['arrival_time'])
-
     info.append(process_info)
     print("")
 
