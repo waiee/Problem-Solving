@@ -14,7 +14,7 @@ def checkArr(arrival):
                 break
             
     
-    print(em_arr)
+    # print(em_arr)
     print(sec_arr)
     return arrival
 
@@ -26,12 +26,18 @@ info = []
 bt = 0
 size = n+1
 
+####### fill array for checking arrival ######
+em_arr = []*size
+sec_arr = []*size
+
+
 for i in range(size):
     process_info = {}
     print("[P" + str(i) + "]")
     process_info['id'] = str(i)
     process_info['burst_time'] = int(input("Enter Burst Time: "))
     process_info['arrival_time'] = int(input("Enter Arrival Time: "))
+    sec_arr.append(process_info['arrival_time'])
 
     info.append(process_info)
     print("")
@@ -48,15 +54,6 @@ for i in range(size):
     p = info[i]
     print("{:<15} {:<15} {:<15}".format(
         p['id'], p['burst_time'], p['arrival_time']))
-
-####### fill array for checking arrival ######
-em_arr = []*size
-sec_arr = []*size
-
-for i in range(size):
-    process_info = info[i]
-    arrival_info = process_info['arrival_time']
-    sec_arr.append(arrival_info)
 
 # Algorithm
 time = 0
