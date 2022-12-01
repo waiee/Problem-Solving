@@ -28,7 +28,6 @@ size = n
 em_arr = []*size
 sec_arr = []*size
 
-
 for i in range(size):
     process_info = {}
     print("[P" + str(i) + "]")
