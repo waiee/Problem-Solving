@@ -1,7 +1,7 @@
 import numpy as np
 
 #function - check arrival
-def checkArr(arrival):
+def checkArr(arrival, check):
     for i in range(size):
         process_info = info[i]
         arrival_info = process_info['arrival_time']
@@ -15,7 +15,7 @@ def checkArr(arrival):
     
     # print(em_arr)
     # print(sec_arr)
-    return arrival
+    return arrival, check
 
 # User insert number of process
 n = int(input("Enter number of processes: "))
@@ -27,7 +27,7 @@ size = n+1
 
 ####### fill array for checking arrival ######
 em_arr = []*size
-sec_arr = []
+sec_arr = []*size
 
 
 for i in range(size):
@@ -58,7 +58,6 @@ for i in range(size):
 time = 0
 wt = 0
 bt = 0
-check_Arr = 0
 
 for i in range(size):
     process_info = info[i]
@@ -77,7 +76,7 @@ for i in range(size):
 
        #check whether a process arrived
        print("")
-       checkArr(check_Arr)
+       checkArr(em_arr, sec_arr)
 
     
     else:
