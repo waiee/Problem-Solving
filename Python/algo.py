@@ -12,8 +12,8 @@ def checkArr(arrival, check):
                 print("P" + str(i) + " has arrived.")
             else:
                 break
-    print(em_arr)
-    print(sec_arr)
+    print(arrival)
+    print(check)
     return arrival, check
 
 # User insert number of process
