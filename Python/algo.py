@@ -49,7 +49,7 @@ for i in range(size):
     print("{:<15} {:<15} {:<15}".format(
         p['id'], p['burst_time'], p['arrival_time']))
 
-####### fill array for checking ######
+####### fill array for checking arrival ######
 em_arr = []*size
 sec_arr = []*size
 
