@@ -22,7 +22,7 @@ print("")
 
 info = []
 bt = 0
-size = n+1
+size = n
 
 ####### array for checking arrival ######
 em_arr = []*size
