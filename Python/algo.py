@@ -4,17 +4,16 @@ import numpy as np
 def checkArr(arrival, check):
     for i in range(size):
         process_info = info[i]
-        arrival_info = process_info['arrival_time']
-        if arrival_info <= time:
-            if arrival_info in sec_arr:
-                em_arr.append(arrival_info)
-                sec_arr.pop(arrival_info)
+        arr_t = process_info['arrival_time']
+        if arr_t <= time:
+            if arr_t in sec_arr:
+                arrival.append(arr_t)
+                check.remove(arr_t)
                 print("P" + str(i) + " has arrived.")
             else:
                 break
-    
-    # print(em_arr)
-    # print(sec_arr)
+    print(em_arr)
+    print(sec_arr)
     return arrival, check
 
 # User insert number of process
@@ -25,7 +24,7 @@ info = []
 bt = 0
 size = n+1
 
-####### fill array for checking arrival ######
+####### array for checking arrival ######
 em_arr = []*size
 sec_arr = []*size
 
@@ -89,3 +88,5 @@ for i in range(size):
 
         #check whether a process arrived
         print("")
+        checkArr(em_arr, sec_arr)
+        
