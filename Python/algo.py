@@ -25,10 +25,11 @@ def compArr(arrival, check):
                 check.remove(arr_t)
                 print("P" + str(i) + " has arrived.")
     # print(arrival)
-    # print(check)ss
+    # print(check)
     return arrival, check
 
 # User insert number of process
+print("[Non-Preemptive SJF] \n")
 n = int(input("Enter number of processes: "))
 print("")
 
