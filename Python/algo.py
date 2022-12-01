@@ -10,10 +10,8 @@ def checkArr(arrival, check):
                 arrival.append(arr_t)
                 check.remove(arr_t)
                 print("P" + str(i) + " has arrived.")
-            else:
-                break
-    print(arrival)
-    print(check)
+    # print(arrival)
+    # print(check)
     return arrival, check
 
 # User insert number of process
