@@ -12,10 +12,9 @@ def checkArr(arrival):
                 print("P" + str(i) + " has arrived.")
             else:
                 break
-            
     
     # print(em_arr)
-    print(sec_arr)
+    # print(sec_arr)
     return arrival
 
 # User insert number of process
@@ -28,7 +27,7 @@ size = n+1
 
 ####### fill array for checking arrival ######
 em_arr = []*size
-sec_arr = []*size
+sec_arr = []
 
 
 for i in range(size):
