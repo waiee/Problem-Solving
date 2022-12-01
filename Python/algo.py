@@ -30,7 +30,12 @@ def compArr(arrival, check):
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
-n = int(input("Enter number of processes: "))
+while True:
+    n = int(input("Enter number of processes: "))
+    if n < 3 or n > 10:
+        print("Please enter number from 3-10.")
+    else:
+        break
 print("")
 
 info = []
