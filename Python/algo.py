@@ -51,9 +51,9 @@ for i in range(size):
     print("")
 
 # Sort by arrival time
-# def sort_param(e):
-#     return e['arrival_time']
-# info.sort(key=sort_param)
+def sort_param(e):
+    return e['arrival_time']
+info.sort(key=sort_param)
 
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
