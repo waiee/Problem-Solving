@@ -17,17 +17,16 @@ def checkArr(arrival, check):
     return arrival, check
 
 #function - delete first array
-def delArr(array):
+def delArr(array, array2):
     i = 0
     array.pop(i)
     array.sort()
-    return array
+    array2.pop(i)
+    array2.sort(key=sort_burst)
+    return array, array2
 
 #function - compare burst time
 def compArr(array):
-    # for i in range(len(array)):
-    if 
-
     return array
 
 # User insert number of process
@@ -61,7 +60,6 @@ for i in range(size):
 # function to sort by arrival time
 def sort_param(e):
     return e['arrival_time']
-info.sort(key=sort_param)
 
 # function to sort by arrival time
 def sort_burst(e):
@@ -84,20 +82,41 @@ bt = 0
 copy_info = []
 
 #sort by arrival time
-# info.sort(key=sort_param)
+info.sort(key=sort_param)
 
 for i in range(size):
+    info.sort(key=sort_param)
     process_info = info[i]
+    at = process_info['arrival_time']
     bt = process_info['burst_time']
-
-    print("") 
-    print("P" + process_info['id'] + "(" + str(bt) + ")")
-    print(burst_arr)
+    i_d = process_info['id']
 
     if i == 0:
+    #check if arrival time sama, tapi diff burst time
+       for j in range(size):
+            p_i = info[j+1]
+            at_pi = p_i['arrival_time']
+            bt_pi = p_i['burst_time']
+            id_pi = p_i['id']
+
+            if at == at_pi:
+                if bt > bt_pi:
+                    temp_bt = bt
+                    temp_id = i_d
+                    bt = bt_pi
+                    i_d = id_pi
+                    bt_pi = temp_bt
+                    id_pi = temp_id
+            else:
+                break
+    
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
        time += bt
+
+       print("")
+       print(burst_arr)
+       print("P" + process_info['id'] + "(" + str(bt) + ")")       
 
        print("Waiting Time: " + str(wt))
        print("Total Time Executed: " + str(time))
@@ -105,14 +124,18 @@ for i in range(size):
        #check whether a process arrived
        print("")
        checkArr(em_arr, sec_arr)
+       delArr(burst_arr, copy_info)
        print(burst_arr)
-       delArr(burst_arr)
-       delArr(copy_info)
+       print(copy_info)
 
     else:
         process_info['waiting_time'] = time-process_info['arrival_time']
         wt = process_info['waiting_time']
         time += bt
+
+        print("")
+        print(burst_arr)
+        print("P" + process_info['id'] + "(" + str(bt) + ")")
 
         print("Waiting Time: " + str(wt))
         print("Total Time Executed: " + str(time))
@@ -120,5 +143,5 @@ for i in range(size):
         #check whether a process arrived
         print("")
         checkArr(em_arr, sec_arr)
-        delArr(burst_arr)
+        delArr(burst_arr, copy_info)
         print(burst_arr)
