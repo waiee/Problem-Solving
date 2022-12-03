@@ -15,18 +15,18 @@ def checkArr(arrival, check):
     return arrival, check
 
 #function - check arrival
-def compArr(arrival, check):
-    for i in range(size):
-        process_info = info[i]
-        arr_t = process_info['arrival_time']
-        if arr_t <= time:
-            if arr_t in sec_arr:
-                arrival.append(arr_t)
-                check.remove(arr_t)
-                print("P" + str(i) + " has arrived.")
-    # print(arrival)
-    # print(check)
-    return arrival, check
+# def compArr(arrival, check):
+#     for i in range(size):
+#         process_info = info[i]
+#         arr_t = process_info['arrival_time']
+#         if arr_t <= time:
+#             if arr_t in sec_arr:
+#                 arrival.append(arr_t)
+#                 check.remove(arr_t)
+#                 print("P" + str(i) + " has arrived.")
+#     # print(arrival)
+#     # print(check)
+#     return arrival, check
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -56,11 +56,6 @@ for i in range(size):
     info.append(process_info)
     print("")
 
-# Sort by arrival time
-def sort_param(e):
-    return e['arrival_time']
-info.sort(key=sort_param)
-
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
 
@@ -73,6 +68,11 @@ for i in range(size):
 time = 0
 wt = 0
 bt = 0
+
+# Sort by arrival time
+def sort_param(e):
+    return e['arrival_time']
+info.sort(key=sort_param)
 
 for i in range(size):
     process_info = info[i]
@@ -95,6 +95,7 @@ for i in range(size):
 
     
     else:
+        # compArr()
         process_info['waiting_time'] = time-process_info['arrival_time']
         wt = process_info['waiting_time']
         time += bt
