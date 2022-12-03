@@ -19,6 +19,10 @@ def checkArr(arrival, check):
 def compArr(array):
     i = 0
     burst_arr.pop(i)
+
+    for i in range(len(array)):
+        if 
+
     return array
 
 # User insert number of process
@@ -66,6 +70,7 @@ for i in range(size):
 time = 0
 wt = 0
 bt = 0
+copy_info = info
 
 #sort by arrival time
 # info.sort(key=sort_param)
@@ -94,7 +99,6 @@ for i in range(size):
        burst_arr.sort()
 
     else:
-        copy_info = info
         process_info['waiting_time'] = time-process_info['arrival_time']
         wt = process_info['waiting_time']
         time += bt
