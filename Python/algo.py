@@ -15,9 +15,9 @@ def checkArr(arrival, check):
     return arrival, check
 
 #function - compare burst
-def compArr(arrival, check):
-
-    return arrival, check
+def compArr(info):
+    
+    return info
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -82,6 +82,7 @@ for i in range(size):
        #check whether a process arrived
        print("")
        checkArr(em_arr, sec_arr)
+       compArr(info)
 
     else:
         #compArr()
