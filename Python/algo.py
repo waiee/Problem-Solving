@@ -93,7 +93,6 @@ for i in range(size):
        print("")
        checkArr(em_arr, sec_arr)
 
-    
     else:
         # compArr()
         process_info['waiting_time'] = time-process_info['arrival_time']
