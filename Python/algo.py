@@ -15,9 +15,13 @@ def checkArr(arrival, check):
     return arrival, check
 
 #function - compare burst
-def compArr(info):
+def compArr(array):
+    i = 0
 
-    return info
+    array.sort()
+    burst_arr.pop(i)
+    
+    return array
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -44,13 +48,18 @@ for i in range(size):
     process_info['burst_time'] = int(input("Enter Burst Time: "))
     process_info['arrival_time'] = int(input("Enter Arrival Time: "))
     sec_arr.append(process_info['arrival_time'])
+    burst_arr.append(process_info['burst_time'])
     info.append(process_info)
     print("")
 
-# Sort by arrival time
+# function to sort by arrival time
 def sort_param(e):
     return e['arrival_time']
 info.sort(key=sort_param)
+
+# function to sort by burst time
+def sort_burst(e):
+        return e['burst_time']
 
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
@@ -65,12 +74,16 @@ time = 0
 wt = 0
 bt = 0
 
+#sort by arrival time
+# info.sort(key=sort_param)
+
 for i in range(size):
     process_info = info[i]
     bt = process_info['burst_time']
 
     print("") 
-    print("P" + process_info['id'] + "(" + str(bt) + ")") 
+    print("P" + process_info['id'] + "(" + str(bt) + ")")
+    print(burst_arr)
 
     if i == 0:
        process_info['waiting_time'] = 0
@@ -83,7 +96,7 @@ for i in range(size):
        #check whether a process arrived
        print("")
        checkArr(em_arr, sec_arr)
-       compArr(info)
+    #    compArr(burst_arr)
 
     else:
         #compArr()
