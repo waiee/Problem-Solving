@@ -16,7 +16,7 @@ def checkArr(arrival, check):
 
 #function - compare burst
 def compArr(info):
-    
+
     return info
 
 # User insert number of process
@@ -35,6 +35,7 @@ bt = 0
 size = n
 em_arr = []*size
 sec_arr = []*size
+burst_arr = []*size
 
 for i in range(size):
     process_info = {}
