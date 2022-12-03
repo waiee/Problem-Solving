@@ -107,6 +107,8 @@ for i in range(size):
                     i_d = id_pi
                     bt_pi = temp_bt
                     id_pi = temp_id
+                else:
+                    break
             else:
                 break
     
