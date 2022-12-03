@@ -51,10 +51,6 @@ def sort_param(e):
     return e['arrival_time']
 info.sort(key=sort_param)
 
-# Sort by arrival time
-def getID(e):
-    return e['id']
-
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
 
