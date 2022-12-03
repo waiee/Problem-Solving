@@ -9,24 +9,15 @@ def checkArr(arrival, check):
             if arr_t in sec_arr:
                 arrival.append(arr_t)
                 check.remove(arr_t)
-                print("P" + str(i) + " has arrived.")
+                print("P" + process_info['id'] + " has arrived.")
     # print(arrival)
     # print(check)
     return arrival, check
 
-#function - check arrival
-# def compArr(arrival, check):
-#     for i in range(size):
-#         process_info = info[i]
-#         arr_t = process_info['arrival_time']
-#         if arr_t <= time:
-#             if arr_t in sec_arr:
-#                 arrival.append(arr_t)
-#                 check.remove(arr_t)
-#                 print("P" + str(i) + " has arrived.")
-#     # print(arrival)
-#     # print(check)
-#     return arrival, check
+#function - compare burst
+def compArr(arrival, check):
+
+    return arrival, check
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -38,11 +29,10 @@ while True:
         break
 print("")
 
+#define
 info = []
 bt = 0
 size = n
-
-####### array for checking arrival ######
 em_arr = []*size
 sec_arr = []*size
 
@@ -55,6 +45,15 @@ for i in range(size):
     sec_arr.append(process_info['arrival_time'])
     info.append(process_info)
     print("")
+
+# Sort by arrival time
+def sort_param(e):
+    return e['arrival_time']
+info.sort(key=sort_param)
+
+# Sort by arrival time
+def getID(e):
+    return e['id']
 
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
@@ -69,17 +68,12 @@ time = 0
 wt = 0
 bt = 0
 
-# Sort by arrival time
-def sort_param(e):
-    return e['arrival_time']
-info.sort(key=sort_param)
-
 for i in range(size):
     process_info = info[i]
     bt = process_info['burst_time']
 
     print("") 
-    print("P" + str(i) + "(" + str(bt) + ")") 
+    print("P" + process_info['id'] + "(" + str(bt) + ")") 
 
     if i == 0:
        process_info['waiting_time'] = 0
@@ -94,7 +88,7 @@ for i in range(size):
        checkArr(em_arr, sec_arr)
 
     else:
-        # compArr()
+        #compArr()
         process_info['waiting_time'] = time-process_info['arrival_time']
         wt = process_info['waiting_time']
         time += bt
@@ -105,4 +99,3 @@ for i in range(size):
         #check whether a process arrived
         print("")
         checkArr(em_arr, sec_arr)
-        
