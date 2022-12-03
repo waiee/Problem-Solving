@@ -17,10 +17,8 @@ def checkArr(arrival, check):
 #function - compare burst
 def compArr(array):
     i = 0
-
     array.sort()
     burst_arr.pop(i)
-    
     return array
 
 # User insert number of process
@@ -96,7 +94,7 @@ for i in range(size):
        #check whether a process arrived
        print("")
        checkArr(em_arr, sec_arr)
-    #    compArr(burst_arr)
+       compArr(burst_arr)
 
     else:
         #compArr()
@@ -110,3 +108,4 @@ for i in range(size):
         #check whether a process arrived
         print("")
         checkArr(em_arr, sec_arr)
+        compArr(burst_arr)
