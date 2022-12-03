@@ -9,7 +9,7 @@ def checkArr(arrival, check):
             if arr_t in sec_arr:
                 arrival.append(arr_t)
                 check.remove(arr_t)
-                print("P" + process_info['id'] + " has arrived.")
+                print("P" + process_info['id'] + " has arrived at " + str(arr_t) + " second.")
                 burst_arr.append(process_info['burst_time'])
     # print(arrival)
     # print(check)
@@ -18,7 +18,6 @@ def checkArr(arrival, check):
 #function - compare burst
 def compArr(array):
     i = 0
-    array.sort()
     burst_arr.pop(i)
     return array
 
@@ -96,6 +95,7 @@ for i in range(size):
        checkArr(em_arr, sec_arr)
        print(burst_arr)
        burst_arr.pop(i)
+       burst_arr.sort()
 
     else:
         #compArr()
@@ -109,5 +109,5 @@ for i in range(size):
         #check whether a process arrived
         print("")
         checkArr(em_arr, sec_arr)
-        print(burst_arr)
         compArr(burst_arr)
+        print(burst_arr)
