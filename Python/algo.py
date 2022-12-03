@@ -54,10 +54,6 @@ def sort_param(e):
     return e['arrival_time']
 info.sort(key=sort_param)
 
-# function to sort by burst time
-def sort_burst(e):
-        return e['burst_time']
-
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
 
@@ -98,7 +94,7 @@ for i in range(size):
        burst_arr.sort()
 
     else:
-        #compArr()
+        copy_info = info
         process_info['waiting_time'] = time-process_info['arrival_time']
         wt = process_info['waiting_time']
         time += bt
