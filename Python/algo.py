@@ -10,6 +10,7 @@ def checkArr(arrival, check):
                 arrival.append(arr_t)
                 check.remove(arr_t)
                 print("P" + process_info['id'] + " has arrived.")
+                burst_arr.append(process_info['burst_time'])
     # print(arrival)
     # print(check)
     return arrival, check
@@ -46,7 +47,6 @@ for i in range(size):
     process_info['burst_time'] = int(input("Enter Burst Time: "))
     process_info['arrival_time'] = int(input("Enter Arrival Time: "))
     sec_arr.append(process_info['arrival_time'])
-    burst_arr.append(process_info['burst_time'])
     info.append(process_info)
     print("")
 
@@ -94,7 +94,8 @@ for i in range(size):
        #check whether a process arrived
        print("")
        checkArr(em_arr, sec_arr)
-       compArr(burst_arr)
+       print(burst_arr)
+       burst_arr.pop(i)
 
     else:
         #compArr()
@@ -108,4 +109,5 @@ for i in range(size):
         #check whether a process arrived
         print("")
         checkArr(em_arr, sec_arr)
+        print(burst_arr)
         compArr(burst_arr)
