@@ -103,8 +103,8 @@ for i in range(size):
 
             if at == at_copy:
                 if bt > bt_copy:
-                    temp = info[i]
-                    info[i] = info[j+1]
+                    temp = process_info
+                    process_info = info[j+1]
                     info[j+1] = temp
 
        process_info['waiting_time'] = 0
