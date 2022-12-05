@@ -95,18 +95,24 @@ for i in range(size):
     #check if arrival time sama, tapi diff burst time
 
        for j in range(len(info)):
+            j=0
             copy_pi = info[j+1]
-            at_copy = copy_info['arrival_time']
-            bt_copy = copy_info['burst_time']
-            id_copy = copy_info['id']
-    
+            at_copy = copy_pi['arrival_time']
+            bt_copy = copy_pi['burst_time']
+            id_copy = copy_pi['id']
+
+            if at == at_copy:
+                if bt > bt_copy:
+                    temp = info[i]
+                    info[i] = info[j+1]
+                    info[j+1] = temp
+
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
        time += bt
 
        print("")
-       print(burst_arr)
-       print("P" + process_info['id'] + "(" + str(bt) + ")")       
+       print("P" + i_d + "(" + str(bt) + ")")       
 
        print("Waiting Time: " + str(wt))
        print("Total Time Executed: " + str(time))
@@ -115,7 +121,7 @@ for i in range(size):
        print("")
        checkArr(em_arr, sec_arr)
        delArr(burst_arr, copy_info)
-       print(burst_arr)
+    #    print(burst_arr)
 
     else:
         process_info['waiting_time'] = time-process_info['arrival_time']
@@ -123,7 +129,7 @@ for i in range(size):
         time += bt
 
         print("")
-        print(burst_arr)
+        # print(burst_arr)
         print("P" + process_info['id'] + "(" + str(bt) + ")")
 
         print("Waiting Time: " + str(wt))
@@ -133,4 +139,4 @@ for i in range(size):
         print("")
         checkArr(em_arr, sec_arr)
         delArr(burst_arr, copy_info)
-        print(burst_arr)
+        # print(burst_arr)
