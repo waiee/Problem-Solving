@@ -85,7 +85,6 @@ copy_info = []
 info.sort(key=sort_param)
 
 for i in range(size):
-    info.sort(key=sort_param)
     process_info = info[i]
     at = process_info['arrival_time']
     bt = process_info['burst_time']
