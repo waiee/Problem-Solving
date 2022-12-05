@@ -94,7 +94,7 @@ for i in range(size):
     if i == 0:
     #check if arrival time sama, tapi diff burst time
        j=0
-       for j in range(size-1):
+       for j in range(size):
             copy_pi = info[j+1]
             at_copy = copy_pi['arrival_time']
             bt_copy = copy_pi['burst_time']
@@ -120,7 +120,6 @@ for i in range(size):
        print("")
        print(info)
        print("P" + proinfo['id'] + "(" + str(bt) + ")")       
-
        print("Waiting Time: " + str(wt))
        print("Total Time Executed: " + str(time))
 
@@ -131,14 +130,13 @@ for i in range(size):
     #    print(burst_arr)
 
     else:
-        process_info['waiting_time'] = time-process_info['arrival_time']
-        wt = process_info['waiting_time']
+        proinfo['waiting_time'] = time-proinfo['arrival_time']
+        wt = proinfo['waiting_time']
         time += bt
 
         print("")
         # print(burst_arr)
-        print("P" + process_info['id'] + "(" + str(bt) + ")")
-
+        print("P" + proinfo['id'] + "(" + str(bt) + ")")
         print("Waiting Time: " + str(wt))
         print("Total Time Executed: " + str(time))
 
