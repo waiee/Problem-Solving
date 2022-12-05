@@ -40,9 +40,9 @@ while True:
 print("")
 
 #define
-info = []
 bt = 0
 size = n
+info = []
 em_arr = []*size
 sec_arr = []*size
 burst_arr = []*size
@@ -93,29 +93,33 @@ for i in range(size):
 
     if i == 0:
     #check if arrival time sama, tapi diff burst time
-
-       for j in range(size):
-            j=0
+       j=0
+       for j in range(size-1):
             copy_pi = info[j+1]
             at_copy = copy_pi['arrival_time']
             bt_copy = copy_pi['burst_time']
             id_copy = copy_pi['id']
 
             if at == at_copy:
-                if bt > bt_copy:
+                if bt > bt_copy or bt_copy < bt:
                     temp = info[i]
                     info[i] = info[j+1]
                     info[j+1] = temp
+                else:
+                    break
             else:
                 break
 
-       process_info['waiting_time'] = 0
-       wt = process_info['waiting_time']
+       proinfo = info[i]
+
+       proinfo['waiting_time'] = 0
+       wt = proinfo['waiting_time']
+       bt = proinfo['burst_time']
        time += bt
 
        print("")
        print(info)
-       print("P" + process_info['id'] + "(" + str(bt) + ")")       
+       print("P" + proinfo['id'] + "(" + str(bt) + ")")       
 
        print("Waiting Time: " + str(wt))
        print("Total Time Executed: " + str(time))
