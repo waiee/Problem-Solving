@@ -93,24 +93,6 @@ for i in range(size):
 
     if i == 0:
     #check if arrival time sama, tapi diff burst time
-       for j in range(size):
-            p_i = info[j+1]
-            at_pi = p_i['arrival_time']
-            bt_pi = p_i['burst_time']
-            id_pi = p_i['id']
-
-            if at == at_pi:
-                if bt > bt_pi:
-                    temp_bt = bt
-                    temp_id = i_d
-                    bt = bt_pi
-                    i_d = id_pi
-                    bt_pi = temp_bt
-                    id_pi = temp_id
-                else:
-                    break
-            else:
-                break
     
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
@@ -128,7 +110,6 @@ for i in range(size):
        checkArr(em_arr, sec_arr)
        delArr(burst_arr, copy_info)
        print(burst_arr)
-       print(copy_info)
 
     else:
         process_info['waiting_time'] = time-process_info['arrival_time']
