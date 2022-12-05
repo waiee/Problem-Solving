@@ -96,6 +96,9 @@ for i in range(size):
 
        for j in range(len(info)):
             copy_pi = info[j+1]
+            at_copy = copy_info['arrival_time']
+            bt_copy = copy_info['burst_time']
+            id_copy = copy_info['id']
     
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
