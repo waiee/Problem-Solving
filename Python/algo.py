@@ -93,6 +93,9 @@ for i in range(size):
 
     if i == 0:
     #check if arrival time sama, tapi diff burst time
+
+       for j in range(len(info)):
+            copy_pi = info[j+1]
     
        process_info['waiting_time'] = 0
        wt = process_info['waiting_time']
