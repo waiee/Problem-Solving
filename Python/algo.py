@@ -65,7 +65,8 @@ def sort_param(e):
 def sort_burst(e):
     return e['burst_time']
 
-# info.sort(key=sort_burst)
+#sort by arrival time
+info.sort(key=sort_param)
 
 # Menu
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
@@ -81,8 +82,8 @@ wt = 0
 bt = 0
 copy_info = []
 
-#sort by arrival time
-info.sort(key=sort_param)
+# #sort by arrival time
+# info.sort(key=sort_param)
 
 for i in range(size):
     process_info = info[i]
