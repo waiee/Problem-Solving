@@ -50,6 +50,10 @@ for i in range(size):
 def sort_param(e):
     return e['arrival_time']
 
+# function to sort by burst time
+def sort_burst(e):
+    return e['burst_time']
+
 #sort by arrival time
 info.sort(key=sort_param)
 
@@ -76,13 +80,15 @@ for i in range(size):
 
     if i == 0:
     #check if arrival time sama, tapi diff burst time 
+        copy_info.append(info[i])
         for j in range(size-1):
             copy_pi = info[j+1]
             at_copy = copy_pi['arrival_time']
             bt_copy = copy_pi['burst_time']
 
             if at == at_copy:
-                copy_info.append(info[j])
+                copy_info.append(info[j+1])
+                compArr(copy_info)
                 if bt > bt_copy:
                     temp = info[i]
                     info[i] = info[j+1]
@@ -93,7 +99,7 @@ for i in range(size):
                 break
 
         proinfo = info[i]
-
+        
         proinfo['waiting_time'] = 0
         wt = proinfo['waiting_time']
         bt = proinfo['burst_time']
