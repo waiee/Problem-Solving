@@ -82,6 +82,7 @@ for i in range(size):
             bt_copy = copy_pi['burst_time']
 
             if at == at_copy:
+                copy_info.append(info[j])
                 if bt > bt_copy:
                     temp = info[i]
                     info[i] = info[j+1]
@@ -92,7 +93,6 @@ for i in range(size):
                 break
 
         proinfo = info[i]
-        copy_info = info
 
         proinfo['waiting_time'] = 0
         wt = proinfo['waiting_time']
