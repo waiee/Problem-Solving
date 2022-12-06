@@ -97,9 +97,11 @@ for i in range(size):
                     break
             else:
                 break
-
-        proinfo = info[i]
         
+        copy_info.sort(key=sort_burst)
+        
+        proinfo = info[i]
+
         proinfo['waiting_time'] = 0
         wt = proinfo['waiting_time']
         bt = proinfo['burst_time']
