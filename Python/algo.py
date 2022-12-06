@@ -14,9 +14,8 @@ def checkArr(arrival, check):
     # print(check)
     return arrival, check
 
-#function - compare burst time
-def compArr(array):
-    return array
+def compArr(info, copy_info, final_info):
+    for i in range
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -35,6 +34,7 @@ info = []
 em_arr = []*size
 sec_arr = []*size
 copy_info = []
+final_info = []
 
 for i in range(size):
     process_info = {}
@@ -80,37 +80,15 @@ for i in range(size):
 
     if i == 0:
     #check if arrival time sama, tapi diff burst time 
-        copy_info.append(info[i])
-        for j in range(size-1):
-            copy_pi = info[j+1]
-            at_copy = copy_pi['arrival_time']
-            bt_copy = copy_pi['burst_time']
-
-            if at == at_copy:
-                copy_info.append(info[j+1])
-                compArr(copy_info)
-                if bt > bt_copy:
-                    temp = info[i]
-                    info[i] = info[j+1]
-                    info[j+1] = temp
-                else:
-                    break
-            else:
-                break
-        
-        copy_info.sort(key=sort_burst)
-        
-        proinfo = info[i]
-
-        proinfo['waiting_time'] = 0
-        wt = proinfo['waiting_time']
-        bt = proinfo['burst_time']
+        final_info['waiting_time'] = 0
+        wt = final_info['waiting_time']
+        bt = final_info['burst_time']
         time += bt
 
         print("")
         print(info)
         print(copy_info)
-        print("P" + proinfo['id'] + "(" + str(bt) + ")")       
+        print("P" + final_info['id'] + "(" + str(bt) + ")")       
         print("Waiting Time: " + str(wt))
         print("Total Time Executed: " + str(time))
 
@@ -118,15 +96,13 @@ for i in range(size):
         print("")
         checkArr(em_arr, sec_arr)
 
-
     else:
-        proinfo = info[i]
-        proinfo['waiting_time'] = time-proinfo['arrival_time']
-        wt = proinfo['waiting_time']
+        final_info['waiting_time'] = time-final_info['arrival_time']
+        wt = final_info['waiting_time']
         time += bt
 
         print("")
-        print("P" + proinfo['id'] + "(" + str(bt) + ")")
+        print("P" + final_info['id'] + "(" + str(bt) + ")")
         print("Waiting Time: " + str(wt))
         print("Total Time Executed: " + str(time))
 
