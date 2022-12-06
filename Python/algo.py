@@ -74,11 +74,10 @@ for i in range(size):
     process_info = info[i]
     at = process_info['arrival_time']
     bt = process_info['burst_time']
-    i_d = process_info['id']
 
     if i == 0:
-    #check if arrival time sama, tapi diff burst time
-       for j in range(size-1):
+    #check if arrival time sama, tapi diff burst time 
+        for j in range(size-1):
             copy_pi = info[j+1]
             at_copy = copy_pi['arrival_time']
             bt_copy = copy_pi['burst_time']
@@ -93,22 +92,22 @@ for i in range(size):
             else:
                 break
 
-       proinfo = info[i]
+        proinfo = info[i]
 
-       proinfo['waiting_time'] = 0
-       wt = proinfo['waiting_time']
-       bt = proinfo['burst_time']
-       time += bt
+        proinfo['waiting_time'] = 0
+        wt = proinfo['waiting_time']
+        bt = proinfo['burst_time']
+        time += bt
 
-       print("")
-       print(info)
-       print("P" + proinfo['id'] + "(" + str(bt) + ")")       
-       print("Waiting Time: " + str(wt))
-       print("Total Time Executed: " + str(time))
+        print("")
+        print(info)
+        print("P" + proinfo['id'] + "(" + str(bt) + ")")       
+        print("Waiting Time: " + str(wt))
+        print("Total Time Executed: " + str(time))
 
        #check whether a process arrived
-       print("")
-       checkArr(em_arr, sec_arr)
+        print("")
+        checkArr(em_arr, sec_arr)
 
 
     else:
