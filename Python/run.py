@@ -14,8 +14,6 @@ print("")
 bt = 0
 size = n
 info = []
-# em_arr = []*size
-# sec_arr = []*size
 copy_info = []
 final_info = []
 bt = 0
@@ -34,8 +32,6 @@ for i in range(size):
 # function to sort by arrival time
 def sort_param(e):
     return e['arrival_time']
-
-# sort by arrival time
 info.sort(key=sort_param)
 
 # Menu
@@ -56,6 +52,6 @@ for i in range(size):
     for j in range(bt):
         if info[i]['arrival_time'] == j:
             copy_info.append(info[i])
-            
+
         else:
             break
