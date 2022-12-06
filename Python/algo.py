@@ -9,21 +9,11 @@ def checkArr(arrival, check):
             if arr_t in sec_arr:
                 arrival.append(arr_t)
                 check.remove(arr_t)
-                burst_arr.append(process_info['burst_time'])
                 copy_info.append(process_info)
                 print("P" + process_info['id'] + " has arrived at " + str(arr_t) + " second.")
     # print(arrival)
     # print(check)
     return arrival, check
-
-#function - delete first array
-def delArr(array, array2):
-    i = 0
-    array.pop(i)
-    array.sort()
-    array2.pop(i)
-    array2.sort(key=sort_burst)
-    return array, array2
 
 #function - compare burst time
 def compArr(array):
@@ -45,7 +35,6 @@ size = n
 info = []
 em_arr = []*size
 sec_arr = []*size
-burst_arr = []*size
 
 for i in range(size):
     process_info = {}
@@ -60,10 +49,6 @@ for i in range(size):
 # function to sort by arrival time
 def sort_param(e):
     return e['arrival_time']
-
-# function to sort by arrival time
-def sort_burst(e):
-    return e['burst_time']
 
 #sort by arrival time
 info.sort(key=sort_param)
@@ -124,8 +109,7 @@ for i in range(size):
        #check whether a process arrived
        print("")
        checkArr(em_arr, sec_arr)
-       delArr(burst_arr, copy_info)
-    #    print(burst_arr)
+
 
     else:
         proinfo = info[i]
@@ -141,5 +125,3 @@ for i in range(size):
         #check whether a process arrived
         print("")
         checkArr(em_arr, sec_arr)
-        delArr(burst_arr, copy_info)
-        # print(burst_arr)
