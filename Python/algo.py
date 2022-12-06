@@ -93,8 +93,7 @@ for i in range(size):
 
     if i == 0:
     #check if arrival time sama, tapi diff burst time
-       for j in range(size):
-        if j != size:
+       for j in range(size-1):
             copy_pi = info[j+1]
             at_copy = copy_pi['arrival_time']
             bt_copy = copy_pi['burst_time']
