@@ -14,8 +14,14 @@ def checkArr(arrival, check):
     # print(check)
     return arrival, check
 
-def compArr(info, copy_info, final_info):
-    for i in range
+def compArr(info, copy_info):
+    for i in range(size):
+        for j in range(time):
+            if info[i]['arrival_time'] == j:
+                copy_info.append(j)
+            else:
+                break
+    return info, copy_info
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -80,15 +86,15 @@ for i in range(size):
 
     if i == 0:
     #check if arrival time sama, tapi diff burst time 
-        final_info['waiting_time'] = 0
-        wt = final_info['waiting_time']
-        bt = final_info['burst_time']
+        process_info['waiting_time'] = 0
+        wt = process_info['waiting_time']
+        bt = process_info['burst_time']
         time += bt
 
         print("")
         print(info)
         print(copy_info)
-        print("P" + final_info['id'] + "(" + str(bt) + ")")       
+        print("P" + process_info['id'] + "(" + str(bt) + ")")       
         print("Waiting Time: " + str(wt))
         print("Total Time Executed: " + str(time))
 
@@ -97,12 +103,14 @@ for i in range(size):
         checkArr(em_arr, sec_arr)
 
     else:
-        final_info['waiting_time'] = time-final_info['arrival_time']
-        wt = final_info['waiting_time']
+        process_info['waiting_time'] = time-process_info['arrival_time']
+        wt = process_info['waiting_time']
         time += bt
 
         print("")
-        print("P" + final_info['id'] + "(" + str(bt) + ")")
+        print(info)
+        print(copy_info)
+        print("P" + process_info['id'] + "(" + str(bt) + ")")
         print("Waiting Time: " + str(wt))
         print("Total Time Executed: " + str(time))
 
