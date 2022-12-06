@@ -60,5 +60,8 @@ for i in range(bt): #start at 0 second
                 final_info.append(copy_info[n])
             copy_info.clear()
 
-print(final_info)
-print("Total time executed: " + str(bt))
+for i in range(len(final_info)):
+    print_info = final_info[i]
+    print("")
+    print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
+    
