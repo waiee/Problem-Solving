@@ -93,7 +93,7 @@ for i in range(size):
             else:
                 break
 
-       proinfo = info[i]
+       proinfo = process_info
 
        proinfo['waiting_time'] = 0
        wt = proinfo['waiting_time']
