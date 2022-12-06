@@ -50,8 +50,6 @@ for i in range(size):
 time = 0
 wt = 0
 
-print("Total burst time: " + str(bt))
-
 for i in range(bt): #start at 0 second
     for j in range(size):
         if info[j]['arrival_time'] == i:
@@ -60,6 +58,7 @@ for i in range(bt): #start at 0 second
             copy_info.sort(key=sort_burst)
             for n in range(len(copy_info)):
                 final_info.append(copy_info[n])
-    copy_info.clear()
+            copy_info.clear()
 
 print(final_info)
+print("Total time executed: " + str(bt))
