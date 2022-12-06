@@ -56,5 +56,6 @@ for i in range(size):
     for j in range(bt):
         if info[i]['arrival_time'] == j:
             copy_info.append(info[i])
+            
         else:
             break
