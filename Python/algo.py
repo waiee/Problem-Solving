@@ -9,7 +9,6 @@ def checkArr(arrival, check):
             if arr_t in sec_arr:
                 arrival.append(arr_t)
                 check.remove(arr_t)
-                copy_info.append(process_info)
                 print("P" + process_info['id'] + " has arrived at " + str(arr_t) + " second.")
     # print(arrival)
     # print(check)
@@ -35,6 +34,7 @@ size = n
 info = []
 em_arr = []*size
 sec_arr = []*size
+copy_info = []
 
 for i in range(size):
     process_info = {}
@@ -65,7 +65,6 @@ for i in range(size):
 time = 0
 wt = 0
 bt = 0
-copy_info = []
 
 # #sort by arrival time
 # info.sort(key=sort_param)
@@ -83,7 +82,7 @@ for i in range(size):
             bt_copy = copy_pi['burst_time']
 
             if at == at_copy:
-                if bt > bt_copy or bt_copy < bt:
+                if bt > bt_copy:
                     temp = info[i]
                     info[i] = info[j+1]
                     info[j+1] = temp
@@ -93,6 +92,7 @@ for i in range(size):
                 break
 
         proinfo = info[i]
+        copy_info = info
 
         proinfo['waiting_time'] = 0
         wt = proinfo['waiting_time']
@@ -101,6 +101,7 @@ for i in range(size):
 
         print("")
         print(info)
+        print(copy_info)
         print("P" + proinfo['id'] + "(" + str(bt) + ")")       
         print("Waiting Time: " + str(wt))
         print("Total Time Executed: " + str(time))
