@@ -1,5 +1,10 @@
 import numpy as np
 
+def ganttChart():
+    print("----------")*size
+    print("|")
+    print("----------")*size
+
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
 while True:
@@ -58,6 +63,10 @@ for i in range(bt):
             for n in range(len(copy_info)):
                 final_info.append(copy_info[n])
             copy_info.clear()
+
+#print gantt chart
+ganttChart()
+    
 
 for i in range(size):
     print_info = final_info[i]
