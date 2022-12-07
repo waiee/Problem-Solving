@@ -59,7 +59,7 @@ for i in range(bt):
                 final_info.append(copy_info[n])
             copy_info.clear()
 
-for i in range(len(final_info)):
+for i in range(size):
     print_info = final_info[i]
     print("")
     print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
