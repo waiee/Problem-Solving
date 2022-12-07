@@ -2,8 +2,6 @@ import numpy as np
 
 def ganttChart():
     print("----------")
-    print("|")
-    print("----------")
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
