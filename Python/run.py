@@ -11,7 +11,6 @@ while True:
 print("")
 
 #define
-bt = 0
 size = n
 info = []
 copy_info = []
