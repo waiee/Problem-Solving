@@ -50,7 +50,7 @@ for i in range(size):
 time = 0
 wt = 0
 
-for i in range(bt): #start at 0 second
+for i in range(bt): 
     for j in range(size):
         if info[j]['arrival_time'] == i:
             copy_info.append(info[j])
