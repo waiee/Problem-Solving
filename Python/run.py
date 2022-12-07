@@ -64,4 +64,4 @@ for i in range(len(final_info)):
     print("")
     print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
     time += print_info['burst_time']
-    print("Total time executed: " + time + " second")
+    print("Total time executed: " + str(time) + " second")
