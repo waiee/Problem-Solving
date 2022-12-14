@@ -11,8 +11,12 @@ public abstract class Vehicle {
         this.carBrand = cb;
     }
 
-    public String getName{
+    public String getName(){
+        return carName;
+    }
 
+    public String getBrand(){
+        return carBrand;
     }
 }
 
