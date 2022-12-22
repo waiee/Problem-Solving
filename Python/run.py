@@ -1,5 +1,27 @@
 import numpy as np
 
+def ganttChart(bar, time, processName):
+
+    print("*--------", end="")
+    for i in range(bar-1):
+        print("---------",end="")
+    print("*")
+
+    for i in range(bar):
+        print(f'{("|  "+processName[i]+"  "):9.7}',end="")
+    print("|")
+
+    print("*--------",end="")
+    for i in range(bar-1):
+        print("---------",end="")
+    print("*")
+
+    for i in range(len(time)):
+        print(f'{(str(time[i])+"       "):9.3}',end="")
+
+    print("")
+    print("")
+
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
 while True:
@@ -65,3 +87,5 @@ for i in range(size):
     print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
     time += print_info['burst_time']
     print("Total time executed: " + str(time) + " second")
+
+ganttChart(size, time, final_info)
