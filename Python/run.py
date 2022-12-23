@@ -8,7 +8,7 @@ def ganttChart(bar, time, processName):
     print("*")
 
     for i in range(bar):
-        print(f'{("|  "+processName[i]+"  "):9.7}',end="")
+        print(f'{("|  "+str(processName[i])+"  "):9.7}',end="")
     print("|")
 
     print("*--------",end="")
@@ -88,4 +88,4 @@ for i in range(size):
     time += print_info['burst_time']
     print("Total time executed: " + str(time) + " second")
 
-ganttChart(size, time, final_info)
+ganttChart(size, bt, final_info)
