@@ -1,6 +1,3 @@
-import numpy as np
-from prettytable import PrettyTable
-
 # def ganttChart(bar, time, processName):
 
 #     print("*--------", end="")
