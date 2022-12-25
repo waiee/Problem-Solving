@@ -75,7 +75,6 @@ for i in range(bt):
     for j in range(size): 
         if info[j]['arrival_time'] == i:
             copy_info.append(info[j])
-            timeFrame.append(0)
         else:
             copy_info.sort(key=sort_burst)
             for n in range(len(copy_info)):
@@ -90,3 +89,6 @@ for i in range(size):
     print("Total time executed: " + str(time) + " second")
 
 # ganttChart(size, time, final_info)
+
+timeFrame.append(0)
+print(timeFrame)
