@@ -1,27 +1,30 @@
 import numpy as np
 from prettytable import PrettyTable
 
-def ganttChart(bar, time, processName):
+# def ganttChart(bar, time, processName):
 
-    print("*--------", end="")
-    for i in range(bar-1):
-        print("---------",end="")
-    print("*")
+#     print("*--------", end="")
+#     for i in range(bar-1):
+#         print("---------",end="")
+#     print("*")
 
-    for i in range(bar):
-        print(f'{("|  "+str(processName[i])+"  "):9.7}',end="")
-    print("|")
+#     for i in range(bar):
+#         print(f'{("|  "+str(processName[i])+"  "):9.7}',end="")
+#     print("|")
 
-    print("*--------",end="")
-    for i in range(bar-1):
-        print("---------",end="")
-    print("*")
+#     print("*--------",end="")
+#     for i in range(bar-1):
+#         print("---------",end="")
+#     print("*")
 
-    for i in range(len(time)):
-        print(f'{(str(time[i])+"       "):9.3}',end="")
+#     for i in range(len(time)):
+#         print(f'{(str(time[i])+"       "):9.3}',end="")
 
-    print("")
-    print("")
+#     print("")
+#     print("")
+
+#gantt chart
+x = PrettyTable()
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
