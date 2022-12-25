@@ -89,6 +89,3 @@ for i in range(size):
     print("Total time executed: " + str(time) + " second")
 
 # ganttChart(size, bt, final_info)
-
-#testtest
-#ipohbest
