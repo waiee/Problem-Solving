@@ -86,7 +86,8 @@ for i in range(size):
     print("")
     print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
     time += print_info['burst_time']
+    timeFrame.append(time)
     print("Total time executed: " + str(time) + " second")
+    print(timeFrame)
 
-print(timeFrame)
 # ganttChart(size, time, final_info)
