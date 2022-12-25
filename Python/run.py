@@ -1,4 +1,4 @@
-'def ganttChart(bar, time, processName):
+def ganttChart(bar, time, processName):
     print("Gantt Chart: \n")
     print("*--------", end="")
     for i in range(bar-1):
@@ -24,14 +24,6 @@ def printProcess(id, bt, time):
         print("P" + str(id[i]) + "(" + str(bt[i]) + ")")
         print("Total time executed: " + str(time[i]) + " second")
         print("")
-
-def calculate(para1, para2, para3):
-    para1 = para2-para3
-    return para3 
-
-def totalAv(total, time):
-    total += time
-    return total
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
