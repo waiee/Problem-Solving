@@ -79,7 +79,7 @@ time = 0
 timeFrame = [0]
 finalID = []
 finalBt = []
-totalTt = 0
+last_info = []
 totalWt = 0
 avTt = 0
 avWt = 0
@@ -116,7 +116,7 @@ for i in range(size):
     wt=tt-bt
     totalWt += wt
     avWt = float(totalWt/size)
-    last_info = print_info[i]
+    last_info.append(print_info[i])
 
 #Output
 print("\n")
