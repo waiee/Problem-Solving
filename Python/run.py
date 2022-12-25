@@ -1,5 +1,5 @@
 def ganttChart(bar, time, processName):
-    print("Gantt Chart: ")
+    print("Gantt Chart: \n")
     print("*--------", end="")
     for i in range(bar-1):
         print("---------",end="")
@@ -16,9 +16,8 @@ def ganttChart(bar, time, processName):
 
     for i in range(len(time)):
         print(f'{(str(time[i])+"       "):9.3}',end="")
-
-    print("")
-    print("")
+    time.pop(0)
+    print("\n")
 
 def printProcess(id, bt, time):
     for i in range(size):
@@ -65,12 +64,13 @@ def sort_burst(e):
     return e['burst_time']
 
 # Menu
+print("---------------------------------------------")
 print("{:<15} {:<15} {:<15}".format('Process', 'Burst Time', 'Arrival Time'))
-
 for i in range(size):
     p = info[i]
     print("{:<15} {:<15} {:<15}".format(
         p['id'], p['burst_time'], p['arrival_time']))
+print("---------------------------------------------")
 
 # Algorithm
 time = 0
@@ -91,14 +91,14 @@ for i in range(bt):
 
 for i in range(size):
     print_info = final_info[i]
-    print("")
     time += print_info['burst_time']
     timeFrame.append(time)
     finalID.append(print_info['id'])
     finalBt.append(print_info['burst_time'])
 
 #Output
+print("\n")
 ganttChart(size, timeFrame, finalID)
-printProcess(finalID, finalBt, timeFrame )
+printProcess(finalID, finalBt, timeFrame)
 
     
