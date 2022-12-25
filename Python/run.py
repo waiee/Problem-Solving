@@ -1,24 +1,24 @@
-# def ganttChart(bar, time, processName):
+def ganttChart(bar, time, processName):
 
-#     print("*--------", end="")
-#     for i in range(bar-1):
-#         print("---------",end="")
-#     print("*")
+    print("*--------", end="")
+    for i in range(bar-1):
+        print("---------",end="")
+    print("*")
 
-#     for i in range(bar):
-#         print(f'{("|  "+str(processName[i])+"  "):9.7}',end="")
-#     print("|")
+    for i in range(bar):
+        print(f'{("|  "+str(processName[i])+"  "):9.7}',end="")
+    print("|")
 
-#     print("*--------",end="")
-#     for i in range(bar-1):
-#         print("---------",end="")
-#     print("*")
+    print("*--------",end="")
+    for i in range(bar-1):
+        print("---------",end="")
+    print("*")
 
-#     for i in range(len(time)):
-#         print(f'{(str(time[i])+"       "):9.3}',end="")
+    for i in range(len(time)):
+        print(f'{(str(time[i])+"       "):9.3}',end="")
 
-#     print("")
-#     print("")
+    print("")
+    print("")
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -37,6 +37,7 @@ copy_info = []
 final_info = []
 bt = 0
 
+#user input
 for i in range(size):
     process_info = {}
     print("[P" + str(i) + "]")
@@ -85,5 +86,3 @@ for i in range(size):
     print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
     time += print_info['burst_time']
     print("Total time executed: " + str(time) + " second")
-
-print(x)
