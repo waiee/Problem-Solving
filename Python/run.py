@@ -25,6 +25,14 @@ def printProcess(id, bt, time):
         print("Total time executed: " + str(time[i]) + " second")
         print("")
 
+def calculate(para1, para2, para3):
+    para3 = para1-para2
+    return para3 
+
+def totalAv(total, time):
+    total += time
+    return total
+
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
 while True:
@@ -99,14 +107,18 @@ for i in range(size):
     finalID.append(print_info['id'])
     finalBt.append(print_info['burst_time'])
 
-    print_info['turnaround_time']=time-print_info['arrival_time']
-
-    print_info['waiting_time']=print_info['turnaround_time']-print_info['burst_time']
-    
+    # print_info['turnaround_time']=time-print_info['arrival_time']
+    calculate(time, print_info['arrival_time'], print_info['turnaround_time'])
+    # totalTt += print_info['turnaround_time']
+    totalAv(totalTt, print_info['turnaround_time'])
+    # print_info['waiting_time']=print_info['turnaround_time']-print_info['burst_time']
+    calculate(print_info['turnaround_time'], print_info['burst_time'], print_info['waiting_time'])
+    # totalWt += print_info['waiting_time']
+    totalAv(totalWt, print_info['waiting_time'])
 
 #Output
 print("\n")
 ganttChart(size, timeFrame, finalID)
 printProcess(finalID, finalBt, timeFrame)
-
-    
+print("Total Turnaround Time: " + totalTt)
+print("Total Waiting Time: " + totalWt)
