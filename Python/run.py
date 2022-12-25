@@ -23,10 +23,6 @@ from prettytable import PrettyTable
 #     print("")
 #     print("")
 
-#gantt chart
-x = PrettyTable()
-x.field_names = ["City name", "Area", "Population", "Annual Rainfall"]
-
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
 while True:
