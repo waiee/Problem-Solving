@@ -6,7 +6,7 @@ def ganttChart(bar, time, processName):
     print("*")
 
     for i in range(bar):
-        print(f'{("|  "+ processName[i] +"  "):9.7}',end="")
+        print(f'{("|  "+ "P" + processName[i] +"  "):9.8}',end="")
     print("|")
 
     print("*--------",end="")
