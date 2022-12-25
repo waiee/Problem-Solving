@@ -22,7 +22,7 @@ def ganttChart(bar, time, processName):
 def printProcess(id, bt, time):
     for i in range(size):
         print("P" + str(id[i]) + "(" + str(bt[i]) + ")")
-        print("Total time executed: " + str(time[i]) + " second")
+        print("Time executed: " + str(time[i]) + " second")
         print("")
 
 # User insert number of process
@@ -74,13 +74,13 @@ print("---------------------------------------------")
 
 # Algorithm
 time = 0
-wt = 0
-tt = 0
 timeFrame = [0]
 finalID = []
 finalBt = []
 totalTt = 0
 totalWt = 0
+avTt = 0
+avWt = 0
 
 info.sort(key=sort_param)
 for i in range(totalTime): 
@@ -105,17 +105,21 @@ for i in range(size):
     finalID.append(print_info['id'])
     finalBt.append(print_info['burst_time'])
 
-    # print_info['turnaround_time']=time-print_info['arrival_time']
-   
-    # totalTt += print_info['turnaround_time']
-   
-    # print_info['waiting_time']=print_info['turnaround_time']-print_info['burst_time']
-   
-    # totalWt += print_info['waiting_time']
+    #Turnaround time
+    tt=time-arr
+    totalTt += tt
+    avTt = totalTt/size
+
+    #Waiting Time
+    wt=tt-bt
+    totalWt += wt
+    avWt = totalWt/size
 
 #Output
 print("\n")
 ganttChart(size, timeFrame, finalID)
 printProcess(finalID, finalBt, timeFrame)
 print("Total Turnaround Time: " + str(totalTt))
+print("Average Turnaround Time: " + str(avTt))
 print("Total Waiting Time: " + str(totalWt))
+print("Average Waiting Time: " + str(avWt))
