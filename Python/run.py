@@ -74,11 +74,14 @@ print("---------------------------------------------")
 # Algorithm
 time = 0
 wt = 0
+tt = 0
 timeFrame = [0]
 finalID = []
 finalBt = []
-info.sort(key=sort_param)
+totalTt = 0
+totalWt = 0
 
+info.sort(key=sort_param)
 for i in range(totalTime): 
     for j in range(size): 
         if info[j]['arrival_time'] == i:
@@ -95,6 +98,11 @@ for i in range(size):
     timeFrame.append(time)
     finalID.append(print_info['id'])
     finalBt.append(print_info['burst_time'])
+
+    print_info['turnaround_time']=time-print_info['arrival_time']
+
+    print_info['waiting_time']=print_info['turnaround_time']-print_info['burst_time']
+    
 
 #Output
 print("\n")
