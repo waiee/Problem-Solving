@@ -1,4 +1,4 @@
-def ganttChart(bar, time, processName):
+'def ganttChart(bar, time, processName):
     print("Gantt Chart: \n")
     print("*--------", end="")
     for i in range(bar-1):
@@ -103,19 +103,23 @@ for i in range(totalTime):
 
 for i in range(size):
     print_info = final_info[i]
+    wt = print_info['waiting_time']
+    tt = print_info['turnaround_time']
+    arr = print_info['arrival_time']
+    bt = print_info['burst_time']
+
     time += print_info['burst_time']
     timeFrame.append(time)
     finalID.append(print_info['id'])
     finalBt.append(print_info['burst_time'])
 
     # print_info['turnaround_time']=time-print_info['arrival_time']
-    calculate(print_info['turnaround_time'], time, print_info['arrival_time'])
+   
     # totalTt += print_info['turnaround_time']
-    totalAv(totalTt, print_info['turnaround_time'])
+   
     # print_info['waiting_time']=print_info['turnaround_time']-print_info['burst_time']
-    calculate(print_info['waiting_time'], print_info['turnaround_time'], print_info['burst_time'])
+   
     # totalWt += print_info['waiting_time']
-    totalAv(totalWt, print_info['waiting_time'])
 
 #Output
 print("\n")
