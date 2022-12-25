@@ -19,10 +19,12 @@ def ganttChart(bar, time, processName):
     time.pop(0)
     print("\n")
 
-def printProcess(id, bt, time):
+def printProcess(id, bt, time, info):
     for i in range(size):
         print("P" + str(id[i]) + "(" + str(bt[i]) + ")")
-        print("Time executed: " + str(time[i]) + " second")
+        print("Total Time Executed: " + str(time[i]) + " second")
+        print("Turnaround Time: " + str(info[i]['turnaround_time']) + " second")
+        print("Waiting Time: " + str(info[i]['waiting_time']) + " second")
         print("")
 
 # User insert number of process
@@ -114,11 +116,12 @@ for i in range(size):
     wt=tt-bt
     totalWt += wt
     avWt = float(totalWt/size)
+    last_info = print_info[i]
 
 #Output
 print("\n")
 ganttChart(size, timeFrame, finalID)
-printProcess(finalID, finalBt, timeFrame)
+printProcess(finalID, finalBt, timeFrame, last_info)
 print("Total Turnaround Time: " + str(totalTt))
 print("Average Turnaround Time: " + str(avTt))
 print("Total Waiting Time: " + str(totalWt))
