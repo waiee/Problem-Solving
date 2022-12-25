@@ -22,10 +22,18 @@ def ganttChart(bar, time, processName):
 def printProcess(id, bt, time, info):
     for i in range(size):
         print("P" + str(id[i]) + "(" + str(bt[i]) + ")")
-        print("Total Time Executed: " + str(time[i]) + " second")
+        # print("Finishing Time: " + str(time[i]) + " second")
         print("Turnaround Time: " + str(info[i]['turnaround_time']) + " second")
         print("Waiting Time: " + str(info[i]['waiting_time']) + " second")
         print("")
+
+#Sort by arrival time
+def sort_param(e):
+    return e['arrival_time']
+
+#Sort by burst time
+def sort_burst(e):
+    return e['burst_time']
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -56,14 +64,6 @@ for i in range(size):
     process_info['turnaround_time'] = totalTime-process_info['arrival_time']
     process_info['waiting_time'] = process_info['turnaround_time']-process_info['burst_time']
     print("")
-
-#Sort by arrival time
-def sort_param(e):
-    return e['arrival_time']
-
-#Sort by burst time
-def sort_burst(e):
-    return e['burst_time']
 
 # Menu
 print("---------------------------------------------")
