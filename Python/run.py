@@ -51,10 +51,10 @@ for i in range(size):
     process_info['id'] = str(i)
     process_info['burst_time'] = int(input("Enter Burst Time: "))
     process_info['arrival_time'] = int(input("Enter Arrival Time: "))
-    process_info['waiting_time'] = 0
-    process_info['turnaround_time'] = 0
     info.append(process_info)
     totalTime += info[i]['burst_time']
+    process_info['turnaround_time'] = totalTime-process_info['arrival_time']
+    process_info['waiting_time'] = process_info['turnaround_time']-process_info['burst_time']
     print("")
 
 #Sort by arrival time
@@ -80,6 +80,7 @@ timeFrame = [0]
 finalID = []
 finalBt = []
 last_info = []
+totalTt = 0
 totalWt = 0
 avTt = 0
 avWt = 0
@@ -116,13 +117,13 @@ for i in range(size):
     wt=tt-bt
     totalWt += wt
     avWt = float(totalWt/size)
-    last_info.append(print_info[i])
 
 #Output
 print("\n")
 ganttChart(size, timeFrame, finalID)
-printProcess(finalID, finalBt, timeFrame, last_info)
+printProcess(finalID, finalBt, timeFrame, final_info)
 print("Total Turnaround Time: " + str(totalTt))
 print("Average Turnaround Time: " + str(avTt))
+print("")
 print("Total Waiting Time: " + str(totalWt))
 print("Average Waiting Time: " + str(avWt))
