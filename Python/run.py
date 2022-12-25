@@ -108,12 +108,12 @@ for i in range(size):
     #Turnaround time
     tt=time-arr
     totalTt += tt
-    avTt = totalTt/size
+    avTt = float(totalTt/size)
 
     #Waiting Time
     wt=tt-bt
     totalWt += wt
-    avWt = totalWt/size
+    avWt = float(totalWt/size)
 
 #Output
 print("\n")
