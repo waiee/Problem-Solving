@@ -40,7 +40,7 @@ size = n
 info = []
 copy_info = []
 final_info = []
-bt = 0
+totalTime = 0
 
 #User input
 for i in range(size):
@@ -51,7 +51,7 @@ for i in range(size):
     process_info['arrival_time'] = int(input("Enter Arrival Time: "))
     process_info['waiting_time'] = 0
     info.append(process_info)
-    bt += info[i]['burst_time']
+    totalTime += info[i]['burst_time']
     print("")
 
 #Sort by arrival time
@@ -79,7 +79,7 @@ finalID = []
 finalBt = []
 info.sort(key=sort_param)
 
-for i in range(bt): 
+for i in range(totalTime): 
     for j in range(size): 
         if info[j]['arrival_time'] == i:
             copy_info.append(info[j])
