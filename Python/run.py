@@ -26,7 +26,7 @@ def printProcess(id, bt, time):
         print("")
 
 def calculate(para1, para2, para3):
-    para3 = para1-para2
+    para1 = para2-para3
     return para3 
 
 def totalAv(total, time):
@@ -109,11 +109,11 @@ for i in range(size):
     finalBt.append(print_info['burst_time'])
 
     # print_info['turnaround_time']=time-print_info['arrival_time']
-    calculate(time, print_info['arrival_time'], print_info['turnaround_time'])
+    calculate(print_info['turnaround_time'], time, print_info['arrival_time'])
     # totalTt += print_info['turnaround_time']
     totalAv(totalTt, print_info['turnaround_time'])
     # print_info['waiting_time']=print_info['turnaround_time']-print_info['burst_time']
-    calculate(print_info['turnaround_time'], print_info['burst_time'], print_info['waiting_time'])
+    calculate(print_info['waiting_time'], print_info['turnaround_time'], print_info['burst_time'])
     # totalWt += print_info['waiting_time']
     totalAv(totalWt, print_info['waiting_time'])
 
