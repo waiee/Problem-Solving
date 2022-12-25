@@ -1,5 +1,5 @@
 def ganttChart(bar, time, processName):
-    print("Gantt Chart")
+    print("Gantt Chart: ")
     print("*--------", end="")
     for i in range(bar-1):
         print("---------",end="")
@@ -23,7 +23,8 @@ def ganttChart(bar, time, processName):
 def printProcess(id, bt, time):
     for i in range(size):
         print("P" + str(id[i]) + "(" + str(bt[i]) + ")")
-        print("Total time executed: " + str(time[i]) + " second \n")
+        print("Total time executed: " + str(time[i]) + " second")
+        print("")
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -35,14 +36,14 @@ while True:
         break
 print("")
 
-#define
+#Define
 size = n
 info = []
 copy_info = []
 final_info = []
 bt = 0
 
-#user input
+#User input
 for i in range(size):
     process_info = {}
     print("[P" + str(i) + "]")
@@ -54,12 +55,12 @@ for i in range(size):
     bt += info[i]['burst_time']
     print("")
 
-# function to sort by arrival time
+#Sort by arrival time
 def sort_param(e):
     return e['arrival_time']
 info.sort(key=sort_param)
 
-# function to sort by burst time
+#Sort by burst time
 def sort_burst(e):
     return e['burst_time']
 
@@ -95,10 +96,8 @@ for i in range(size):
     timeFrame.append(time)
     finalID.append(print_info['id'])
     finalBt.append(print_info['burst_time'])
-    # print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
-    # print("Total time executed: " + str(time) + " second")
 
-print(" ")
+#Output
 ganttChart(size, timeFrame, finalID)
 printProcess(finalID, finalBt, timeFrame )
 
