@@ -1,5 +1,5 @@
 def ganttChart(bar, time, processName):
-
+    print("Gantt Chart")
     print("*--------", end="")
     for i in range(bar-1):
         print("---------",end="")
@@ -19,6 +19,11 @@ def ganttChart(bar, time, processName):
 
     print("")
     print("")
+
+def printProcess(id, bt, time):
+    for i in range(size):
+        print("P" + str(id[i]) + "(" + str(bt[i]) + ")")
+        print("Total time executed: " + str(time[i]) + " second \n")
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -71,6 +76,7 @@ time = 0
 wt = 0
 timeFrame = [0]
 finalID = []
+finalBt = []
 
 for i in range(bt): 
     for j in range(size): 
@@ -85,11 +91,15 @@ for i in range(bt):
 for i in range(size):
     print_info = final_info[i]
     print("")
-    print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
     time += print_info['burst_time']
     timeFrame.append(time)
     finalID.append(print_info['id'])
-    print("Total time executed: " + str(time) + " second")
+    finalBt.append(print_info['burst_time'])
+    # print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
+    # print("Total time executed: " + str(time) + " second")
 
 print(" ")
 ganttChart(size, timeFrame, finalID)
+printProcess(finalID, finalBt, timeFrame )
+
+    
