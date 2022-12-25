@@ -69,7 +69,7 @@ for i in range(size):
 # Algorithm
 time = 0
 wt = 0
-timeFrame = []
+timeFrame = [0]
 
 for i in range(bt): 
     for j in range(size): 
@@ -88,7 +88,5 @@ for i in range(size):
     time += print_info['burst_time']
     print("Total time executed: " + str(time) + " second")
 
-# ganttChart(size, time, final_info)
-
-timeFrame.append(0)
 print(timeFrame)
+# ganttChart(size, time, final_info)
