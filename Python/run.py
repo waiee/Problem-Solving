@@ -25,6 +25,7 @@ from prettytable import PrettyTable
 
 #gantt chart
 x = PrettyTable()
+x.field_names = ["City name", "Area", "Population", "Annual Rainfall"]
 
 # User insert number of process
 print("[Non-Preemptive SJF] \n")
@@ -92,4 +93,4 @@ for i in range(size):
     time += print_info['burst_time']
     print("Total time executed: " + str(time) + " second")
 
-# ganttChart(size, bt, final_info)
+print(x)
