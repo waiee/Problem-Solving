@@ -6,7 +6,7 @@ def ganttChart(bar, time, processName):
     print("*")
 
     for i in range(bar):
-        print(f'{("|  "+str(processName[i])+"  "):9.7}',end="")
+        print(f'{("|  "+ processName[i] +"  "):9.7}',end="")
     print("|")
 
     print("*--------",end="")
@@ -70,6 +70,7 @@ for i in range(size):
 time = 0
 wt = 0
 timeFrame = [0]
+finalID = []
 
 for i in range(bt): 
     for j in range(size): 
@@ -87,7 +88,8 @@ for i in range(size):
     print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
     time += print_info['burst_time']
     timeFrame.append(time)
+    finalID.append(print_info['id'])
     print("Total time executed: " + str(time) + " second")
-    print(timeFrame)
 
-# ganttChart(size, time, final_info)
+print(" ")
+ganttChart(size, timeFrame, finalID)
