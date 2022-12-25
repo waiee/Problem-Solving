@@ -58,6 +58,7 @@ for i in range(size):
     process_info['burst_time'] = int(input("Enter Burst Time: "))
     process_info['arrival_time'] = int(input("Enter Arrival Time: "))
     process_info['waiting_time'] = 0
+    process_info['turnaround_time'] = 0
     info.append(process_info)
     totalTime += info[i]['burst_time']
     print("")
@@ -120,5 +121,5 @@ for i in range(size):
 print("\n")
 ganttChart(size, timeFrame, finalID)
 printProcess(finalID, finalBt, timeFrame)
-print("Total Turnaround Time: " + totalTt)
-print("Total Waiting Time: " + totalWt)
+print("Total Turnaround Time: " + str(totalTt))
+print("Total Waiting Time: " + str(totalWt))
