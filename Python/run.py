@@ -57,7 +57,6 @@ for i in range(size):
 #Sort by arrival time
 def sort_param(e):
     return e['arrival_time']
-info.sort(key=sort_param)
 
 #Sort by burst time
 def sort_burst(e):
@@ -78,6 +77,7 @@ wt = 0
 timeFrame = [0]
 finalID = []
 finalBt = []
+info.sort(key=sort_param)
 
 for i in range(bt): 
     for j in range(size): 
