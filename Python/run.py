@@ -69,11 +69,13 @@ for i in range(size):
 # Algorithm
 time = 0
 wt = 0
+timeFrame = []
 
 for i in range(bt): 
     for j in range(size): 
         if info[j]['arrival_time'] == i:
             copy_info.append(info[j])
+            timeFrame.append(0)
         else:
             copy_info.sort(key=sort_burst)
             for n in range(len(copy_info)):
@@ -86,3 +88,5 @@ for i in range(size):
     print("P" + str(print_info['id']) + "(" + str(print_info['burst_time']) + ")")
     time += print_info['burst_time']
     print("Total time executed: " + str(time) + " second")
+
+# ganttChart(size, time, final_info)
