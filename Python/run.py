@@ -22,7 +22,7 @@ def ganttChart(bar, time, processName):
 def printProcess(id, bt, time, info):
     for i in range(size):
         print("P" + str(id[i]) + "(" + str(bt[i]) + ")")
-        # print("Finishing Time: " + str(time[i]) + " second")
+        print("Finishing Time: " + str(time[i]) + " second")
         print("Turnaround Time: " + str(info[i]['turnaround_time']) + " second")
         print("Waiting Time: " + str(info[i]['waiting_time']) + " second")
         print("")
