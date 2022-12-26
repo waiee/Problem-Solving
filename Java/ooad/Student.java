@@ -53,7 +53,17 @@ public class Student {
             i++;
         }
         br.close();
-
         return students;
+    }
+}
+
+class testStudent{
+    
+    Student[] students = Student.loadStudentsFromCSV("students.csv");
+    Student s = students[0];
+    s.login("username","password");
+    if (s.isLoggedIn()) {
+        // do something
+        s.logout();
     }
 }
