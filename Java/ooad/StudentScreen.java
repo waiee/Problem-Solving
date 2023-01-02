@@ -8,8 +8,9 @@ public class StudentScreen {
 
         JFrame frame = new JFrame();
 
-        JButton button = new JButton();
-        
+        JButton button = new JButton("View Subject");
+    
+
         
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
@@ -17,7 +18,7 @@ public class StudentScreen {
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Welcomt to Student Screen!");
+        frame.setTitle("Student Screen");
         frame.pack();
         frame.setVisible(true);
     }
