@@ -2,14 +2,18 @@ package ooad;
 import javax.swing.*;
 import java.awt.*;
 
-public class StudentScreen {
+public class StudentScreen implements ActionListener {
+    int count = 0;
+    JLabel clicklabel;
 
     public StudentScreen(){
 
         JFrame frame = new JFrame();
 
         JButton button = new JButton("View Subject");
+        button.addActionListener(this);
         JLabel label = new JLabel("Welcome to Student Screen");
+        clickLabel = new JLabel("Number of clicks: 0");
     
 
         JPanel panel = new JPanel();
@@ -17,6 +21,7 @@ public class StudentScreen {
         panel.setLayout(new GridLayout(0, 1));
         panel.add(label);
         panel.add(button);
+        panel.add(clickLabel);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,5 +32,10 @@ public class StudentScreen {
 
     public static void main(String[] args) {
        new StudentScreen();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+        count++;
     }
 }
