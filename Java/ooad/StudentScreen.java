@@ -11,7 +11,6 @@ public class StudentScreen {
         JButton button = new JButton("View Subject");
         JLabel label = new JLabel("Number of clicks 0");
     
-
         
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
