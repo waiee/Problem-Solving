@@ -9,6 +9,7 @@ public class StudentScreen {
         JFrame frame = new JFrame();
 
         JButton button = new JButton("View Subject");
+        JLabel label = new JLabel("Number of clicks 0");
     
 
         
