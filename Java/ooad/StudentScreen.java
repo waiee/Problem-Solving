@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class StudentScreen implements ActionListener {
     int count = 0;
-    JLabel clicklabel;
+    JLabel clickLabel;
 
     public StudentScreen(){
 
@@ -37,5 +37,6 @@ public class StudentScreen implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         count++;
+        clickLabel.setText("Number of clicks: " + count);
     }
 }
