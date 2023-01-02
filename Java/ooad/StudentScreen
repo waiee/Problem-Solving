@@ -30,7 +30,7 @@ public class StudentScreen {
  
          // Add the panel to the frame
          frame.add(panel, BorderLayout.CENTER);
-        
+         frame.SetDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
          // Display the frame
          frame.setVisible(true);
     }
