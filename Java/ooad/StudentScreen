@@ -21,7 +21,7 @@ public class StudentScreen {
          panel.add(textField);
  
          // Add a JButton to the panel
-         JButton submitButton = new JButton("Submit");
+         =JButton submitButton = new JButton("Submit");
          panel.add(submitButton);
  
          // Add a "View Subject" button to the panel
@@ -29,8 +29,8 @@ public class StudentScreen {
          panel.add(viewSubjectButton);
  
          // Add the panel to the frame
-         frame.add(panel);
- 
+         frame.add(panel, BorderLayout.CENTER);
+        
          // Display the frame
          frame.setVisible(true);
     }
