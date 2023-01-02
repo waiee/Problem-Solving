@@ -9,14 +9,14 @@ public class StudentScreen {
         JFrame frame = new JFrame();
 
         JButton button = new JButton("View Subject");
-        JLabel label = new JLabel("Number of clicks 0");
+        JLabel label = new JLabel("Welcome to Student Screen");
     
-        
+
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
         panel.setLayout(new GridLayout(0, 1));
-        panel.add(button);
         panel.add(label);
+        panel.add(button);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
