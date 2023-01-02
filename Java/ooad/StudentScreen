@@ -28,6 +28,6 @@ public class StudentScreen {
     }
 
     public static void main(String[] args) {
-       new StudentScreen()
+       new StudentScreen();
     }
 }
