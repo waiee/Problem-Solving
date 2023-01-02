@@ -16,14 +16,6 @@ public class StudentScreen {
          JLabel label = new JLabel("Welcome to the Student Screen!");
          panel.add(label);
  
-         // Add a JTextField to the panel
-         JTextField textField = new JTextField();
-         panel.add(textField);
- 
-         // Add a JButton to the panel
-         =JButton submitButton = new JButton("Submit");
-         panel.add(submitButton);
- 
          // Add a "View Subject" button to the panel
          JButton viewSubjectButton = new JButton("View Subject");
          panel.add(viewSubjectButton);
@@ -31,7 +23,7 @@ public class StudentScreen {
          // Add the panel to the frame
          frame.add(panel, BorderLayout.CENTER);
          frame.SetDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
-         // Display the frame
+         frame.pack();
          frame.setVisible(true);
     }
 
