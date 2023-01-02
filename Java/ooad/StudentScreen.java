@@ -1,8 +1,9 @@
 package ooad;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class StudentScreen implements ActionListener {
+public class StudentScreen implements ActionListener{
     int count = 0;
     JLabel clickLabel;
 
