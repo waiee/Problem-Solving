@@ -29,9 +29,3 @@ public class Project {
       this.status = status;
     }
   }
-  
-  class testProject{
-    Project project = new Project("Project 1", true);
-    System.out.println(project)
-
-  }
