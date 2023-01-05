@@ -15,7 +15,6 @@ public class StudentScreen implements ActionListener{
         button.addActionListener(this);
         JLabel label = new JLabel("Welcome to Student Screen");
         clickLabel = new JLabel("Number of clicks: 0");
-    
 
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
