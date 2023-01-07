@@ -2,25 +2,43 @@ package ooad;
 
 import java.util.List;
 
-public class Student {
+public abstract class Student extends People {
+    private String username;
+    private String password;
     private String specialization;
 
-    public Student() {
-        this.specialization = "";
-    }
+    public Student() {}
 
-    public Student(String specialization) {
+    public Student(String username, String password, String specialization) {
+        this.username = username;
+        this.password = password;
         this.specialization = specialization;
-    }
-
-    //Getter
-    public String getSpecialization() {
-        return specialization;
     }
 
     //Setter
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
+    }
+    
+    //Getter
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getSpecialization() {
+        return specialization;
     }
 
     //View projects offered by lecturer
