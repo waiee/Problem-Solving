@@ -14,14 +14,14 @@ public class StudentScreen implements ActionListener{
         JButton button = new JButton("View Subject");
         button.addActionListener(this);
         JLabel label = new JLabel("Welcome to Student Screen");
-        clickLabel = new JLabel("Number of clicks: 0");
+        // clickLabel = new JLabel("Number of clicks: 0");
 
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
         panel.setLayout(new GridLayout(0, 1));
         panel.add(label);
         panel.add(button);
-        panel.add(clickLabel);
+        // panel.add(clickLabel);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,7 +36,7 @@ public class StudentScreen implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e){
-        count++;
-        clickLabel.setText("Number of clicks: " + count);
+        // count++;
+        // clickLabel.setText("Number of clicks: " + count);
     }
 }
